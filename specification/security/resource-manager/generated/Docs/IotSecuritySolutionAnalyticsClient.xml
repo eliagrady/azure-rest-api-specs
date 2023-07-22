@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetIotSecuritySolutionAnalyticsAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call GetIotSecuritySolutionAnalyticsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IotSecuritySolutionAnalyticsClient("<subscriptionId>", credential);
+
+Response response = await client.GetIotSecuritySolutionAnalyticsAsync("<resourceGroupName>", "<solutionName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("metrics").GetProperty("high").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("metrics").GetProperty("medium").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("metrics").GetProperty("low").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("unhealthyDeviceCount").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("devicesMetrics")[0].GetProperty("date").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("devicesMetrics")[0].GetProperty("devicesMetrics").GetProperty("high").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("devicesMetrics")[0].GetProperty("devicesMetrics").GetProperty("medium").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("devicesMetrics")[0].GetProperty("devicesMetrics").GetProperty("low").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("topAlertedDevices")[0].GetProperty("deviceId").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("topAlertedDevices")[0].GetProperty("alertsCount").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mostPrevalentDeviceAlerts")[0].GetProperty("alertDisplayName").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mostPrevalentDeviceAlerts")[0].GetProperty("reportedSeverity").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mostPrevalentDeviceAlerts")[0].GetProperty("alertsCount").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mostPrevalentDeviceRecommendations")[0].GetProperty("recommendationDisplayName").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mostPrevalentDeviceRecommendations")[0].GetProperty("reportedSeverity").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mostPrevalentDeviceRecommendations")[0].GetProperty("devicesCount").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("nextLink").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetIotSecuritySolutionAnalytics(string,string,RequestContext)">
+<example>
+This sample shows how to call GetIotSecuritySolutionAnalytics with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IotSecuritySolutionAnalyticsClient("<subscriptionId>", credential);
+
+Response response = client.GetIotSecuritySolutionAnalytics("<resourceGroupName>", "<solutionName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("metrics").GetProperty("high").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("metrics").GetProperty("medium").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("metrics").GetProperty("low").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("unhealthyDeviceCount").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("devicesMetrics")[0].GetProperty("date").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("devicesMetrics")[0].GetProperty("devicesMetrics").GetProperty("high").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("devicesMetrics")[0].GetProperty("devicesMetrics").GetProperty("medium").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("devicesMetrics")[0].GetProperty("devicesMetrics").GetProperty("low").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("topAlertedDevices")[0].GetProperty("deviceId").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("topAlertedDevices")[0].GetProperty("alertsCount").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mostPrevalentDeviceAlerts")[0].GetProperty("alertDisplayName").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mostPrevalentDeviceAlerts")[0].GetProperty("reportedSeverity").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mostPrevalentDeviceAlerts")[0].GetProperty("alertsCount").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mostPrevalentDeviceRecommendations")[0].GetProperty("recommendationDisplayName").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mostPrevalentDeviceRecommendations")[0].GetProperty("reportedSeverity").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mostPrevalentDeviceRecommendations")[0].GetProperty("devicesCount").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("nextLink").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetIotSecuritySolutionAnalyticAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call GetIotSecuritySolutionAnalyticAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IotSecuritySolutionAnalyticsClient("<subscriptionId>", credential);
+
+Response response = await client.GetIotSecuritySolutionAnalyticAsync("<resourceGroupName>", "<solutionName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("metrics").GetProperty("high").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("metrics").GetProperty("medium").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("metrics").GetProperty("low").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("unhealthyDeviceCount").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("devicesMetrics")[0].GetProperty("date").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("devicesMetrics")[0].GetProperty("devicesMetrics").GetProperty("high").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("devicesMetrics")[0].GetProperty("devicesMetrics").GetProperty("medium").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("devicesMetrics")[0].GetProperty("devicesMetrics").GetProperty("low").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topAlertedDevices")[0].GetProperty("deviceId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topAlertedDevices")[0].GetProperty("alertsCount").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("mostPrevalentDeviceAlerts")[0].GetProperty("alertDisplayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("mostPrevalentDeviceAlerts")[0].GetProperty("reportedSeverity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("mostPrevalentDeviceAlerts")[0].GetProperty("alertsCount").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("mostPrevalentDeviceRecommendations")[0].GetProperty("recommendationDisplayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("mostPrevalentDeviceRecommendations")[0].GetProperty("reportedSeverity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("mostPrevalentDeviceRecommendations")[0].GetProperty("devicesCount").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetIotSecuritySolutionAnalytic(string,string,RequestContext)">
+<example>
+This sample shows how to call GetIotSecuritySolutionAnalytic with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IotSecuritySolutionAnalyticsClient("<subscriptionId>", credential);
+
+Response response = client.GetIotSecuritySolutionAnalytic("<resourceGroupName>", "<solutionName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("metrics").GetProperty("high").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("metrics").GetProperty("medium").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("metrics").GetProperty("low").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("unhealthyDeviceCount").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("devicesMetrics")[0].GetProperty("date").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("devicesMetrics")[0].GetProperty("devicesMetrics").GetProperty("high").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("devicesMetrics")[0].GetProperty("devicesMetrics").GetProperty("medium").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("devicesMetrics")[0].GetProperty("devicesMetrics").GetProperty("low").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topAlertedDevices")[0].GetProperty("deviceId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topAlertedDevices")[0].GetProperty("alertsCount").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("mostPrevalentDeviceAlerts")[0].GetProperty("alertDisplayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("mostPrevalentDeviceAlerts")[0].GetProperty("reportedSeverity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("mostPrevalentDeviceAlerts")[0].GetProperty("alertsCount").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("mostPrevalentDeviceRecommendations")[0].GetProperty("recommendationDisplayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("mostPrevalentDeviceRecommendations")[0].GetProperty("reportedSeverity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("mostPrevalentDeviceRecommendations")[0].GetProperty("devicesCount").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

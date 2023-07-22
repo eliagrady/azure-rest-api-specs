@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetAllowedConnectionAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call GetAllowedConnectionAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AllowedConnectionsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.GetAllowedConnectionAsync("<resourceGroupName>", "<connectionType>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("calculatedDateTime").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("inboundConnectedResources")[0].GetProperty("connectedResourceId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("inboundConnectedResources")[0].GetProperty("tcpPorts").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("inboundConnectedResources")[0].GetProperty("udpPorts").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("outboundConnectedResources")[0].GetProperty("connectedResourceId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("outboundConnectedResources")[0].GetProperty("tcpPorts").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("outboundConnectedResources")[0].GetProperty("udpPorts").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetAllowedConnection(string,string,RequestContext)">
+<example>
+This sample shows how to call GetAllowedConnection with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AllowedConnectionsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.GetAllowedConnection("<resourceGroupName>", "<connectionType>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("calculatedDateTime").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("inboundConnectedResources")[0].GetProperty("connectedResourceId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("inboundConnectedResources")[0].GetProperty("tcpPorts").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("inboundConnectedResources")[0].GetProperty("udpPorts").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("outboundConnectedResources")[0].GetProperty("connectedResourceId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("outboundConnectedResources")[0].GetProperty("tcpPorts").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("outboundConnectedResources")[0].GetProperty("udpPorts").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetAllowedConnectionsAsync(RequestContext)">
+<example>
+This sample shows how to call GetAllowedConnectionsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AllowedConnectionsClient("<subscriptionId>", "<ascLocation>", credential);
+
+await foreach (var item in client.GetAllowedConnectionsAsync(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("calculatedDateTime").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("inboundConnectedResources")[0].GetProperty("connectedResourceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("inboundConnectedResources")[0].GetProperty("tcpPorts").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("inboundConnectedResources")[0].GetProperty("udpPorts").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("outboundConnectedResources")[0].GetProperty("connectedResourceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("outboundConnectedResources")[0].GetProperty("tcpPorts").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("outboundConnectedResources")[0].GetProperty("udpPorts").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetAllowedConnections(RequestContext)">
+<example>
+This sample shows how to call GetAllowedConnections with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AllowedConnectionsClient("<subscriptionId>", "<ascLocation>", credential);
+
+foreach (var item in client.GetAllowedConnections(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("calculatedDateTime").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("inboundConnectedResources")[0].GetProperty("connectedResourceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("inboundConnectedResources")[0].GetProperty("tcpPorts").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("inboundConnectedResources")[0].GetProperty("udpPorts").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("outboundConnectedResources")[0].GetProperty("connectedResourceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("outboundConnectedResources")[0].GetProperty("tcpPorts").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("outboundConnectedResources")[0].GetProperty("udpPorts").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetAllowedConnectionsByHomeRegionAsync(RequestContext)">
+<example>
+This sample shows how to call GetAllowedConnectionsByHomeRegionAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AllowedConnectionsClient("<subscriptionId>", "<ascLocation>", credential);
+
+await foreach (var item in client.GetAllowedConnectionsByHomeRegionAsync(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("calculatedDateTime").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("inboundConnectedResources")[0].GetProperty("connectedResourceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("inboundConnectedResources")[0].GetProperty("tcpPorts").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("inboundConnectedResources")[0].GetProperty("udpPorts").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("outboundConnectedResources")[0].GetProperty("connectedResourceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("outboundConnectedResources")[0].GetProperty("tcpPorts").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("outboundConnectedResources")[0].GetProperty("udpPorts").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetAllowedConnectionsByHomeRegion(RequestContext)">
+<example>
+This sample shows how to call GetAllowedConnectionsByHomeRegion with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AllowedConnectionsClient("<subscriptionId>", "<ascLocation>", credential);
+
+foreach (var item in client.GetAllowedConnectionsByHomeRegion(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("calculatedDateTime").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("inboundConnectedResources")[0].GetProperty("connectedResourceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("inboundConnectedResources")[0].GetProperty("tcpPorts").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("inboundConnectedResources")[0].GetProperty("udpPorts").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("outboundConnectedResources")[0].GetProperty("connectedResourceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("outboundConnectedResources")[0].GetProperty("tcpPorts").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("connectableResources")[0].GetProperty("outboundConnectedResources")[0].GetProperty("udpPorts").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

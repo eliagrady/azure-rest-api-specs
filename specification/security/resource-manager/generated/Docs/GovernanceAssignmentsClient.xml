@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetGovernanceAssignmentAsync(string,string,string,RequestContext)">
+<example>
+This sample shows how to call GetGovernanceAssignmentAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new GovernanceAssignmentsClient(credential);
+
+Response response = await client.GetGovernanceAssignmentAsync("<scope>", "<assessmentName>", "<assignmentKey>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("owner").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDueDate").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationEta").GetProperty("eta").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationEta").GetProperty("justification").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("isGracePeriod").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("governanceEmailNotification").GetProperty("disableManagerEmailNotification").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("governanceEmailNotification").GetProperty("disableOwnerEmailNotification").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("ticketNumber").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("ticketLink").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("ticketStatus").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetGovernanceAssignment(string,string,string,RequestContext)">
+<example>
+This sample shows how to call GetGovernanceAssignment with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new GovernanceAssignmentsClient(credential);
+
+Response response = client.GetGovernanceAssignment("<scope>", "<assessmentName>", "<assignmentKey>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("owner").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDueDate").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationEta").GetProperty("eta").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationEta").GetProperty("justification").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("isGracePeriod").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("governanceEmailNotification").GetProperty("disableManagerEmailNotification").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("governanceEmailNotification").GetProperty("disableOwnerEmailNotification").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("ticketNumber").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("ticketLink").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("ticketStatus").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="CreateOrUpdateAsync(string,string,string,RequestContent,RequestContext)">
+<example>
+This sample shows how to call CreateOrUpdateAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new GovernanceAssignmentsClient(credential);
+
+var data = new {};
+
+Response response = await client.CreateOrUpdateAsync("<scope>", "<assessmentName>", "<assignmentKey>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call CreateOrUpdateAsync with all parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new GovernanceAssignmentsClient(credential);
+
+var data = new {
+    properties = new {
+        owner = "<owner>",
+        remediationDueDate = "2022-05-10T18:57:31.2311892Z",
+        remediationEta = new {
+            eta = "2022-05-10T18:57:31.2311892Z",
+            justification = "<justification>",
+        },
+        isGracePeriod = true,
+        governanceEmailNotification = new {
+            disableManagerEmailNotification = true,
+            disableOwnerEmailNotification = true,
+        },
+        additionalData = new {
+            ticketNumber = 1234,
+            ticketLink = "<ticketLink>",
+            ticketStatus = "<ticketStatus>",
+        },
+    },
+};
+
+Response response = await client.CreateOrUpdateAsync("<scope>", "<assessmentName>", "<assignmentKey>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("owner").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDueDate").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationEta").GetProperty("eta").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationEta").GetProperty("justification").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("isGracePeriod").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("governanceEmailNotification").GetProperty("disableManagerEmailNotification").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("governanceEmailNotification").GetProperty("disableOwnerEmailNotification").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("ticketNumber").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("ticketLink").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("ticketStatus").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="CreateOrUpdate(string,string,string,RequestContent,RequestContext)">
+<example>
+This sample shows how to call CreateOrUpdate with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new GovernanceAssignmentsClient(credential);
+
+var data = new {};
+
+Response response = client.CreateOrUpdate("<scope>", "<assessmentName>", "<assignmentKey>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call CreateOrUpdate with all parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new GovernanceAssignmentsClient(credential);
+
+var data = new {
+    properties = new {
+        owner = "<owner>",
+        remediationDueDate = "2022-05-10T18:57:31.2311892Z",
+        remediationEta = new {
+            eta = "2022-05-10T18:57:31.2311892Z",
+            justification = "<justification>",
+        },
+        isGracePeriod = true,
+        governanceEmailNotification = new {
+            disableManagerEmailNotification = true,
+            disableOwnerEmailNotification = true,
+        },
+        additionalData = new {
+            ticketNumber = 1234,
+            ticketLink = "<ticketLink>",
+            ticketStatus = "<ticketStatus>",
+        },
+    },
+};
+
+Response response = client.CreateOrUpdate("<scope>", "<assessmentName>", "<assignmentKey>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("owner").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDueDate").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationEta").GetProperty("eta").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationEta").GetProperty("justification").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("isGracePeriod").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("governanceEmailNotification").GetProperty("disableManagerEmailNotification").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("governanceEmailNotification").GetProperty("disableOwnerEmailNotification").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("ticketNumber").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("ticketLink").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("ticketStatus").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="DeleteAsync(string,string,string,RequestContext)">
+<example>
+This sample shows how to call DeleteAsync with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new GovernanceAssignmentsClient(credential);
+
+Response response = await client.DeleteAsync("<scope>", "<assessmentName>", "<assignmentKey>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="Delete(string,string,string,RequestContext)">
+<example>
+This sample shows how to call Delete with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new GovernanceAssignmentsClient(credential);
+
+Response response = client.Delete("<scope>", "<assessmentName>", "<assignmentKey>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="GetGovernanceAssignmentsAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call GetGovernanceAssignmentsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new GovernanceAssignmentsClient(credential);
+
+await foreach (var item in client.GetGovernanceAssignmentsAsync("<scope>", "<assessmentName>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("owner").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDueDate").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationEta").GetProperty("eta").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationEta").GetProperty("justification").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("isGracePeriod").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("governanceEmailNotification").GetProperty("disableManagerEmailNotification").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("governanceEmailNotification").GetProperty("disableOwnerEmailNotification").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("ticketNumber").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("ticketLink").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("ticketStatus").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetGovernanceAssignments(string,string,RequestContext)">
+<example>
+This sample shows how to call GetGovernanceAssignments with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new GovernanceAssignmentsClient(credential);
+
+foreach (var item in client.GetGovernanceAssignments("<scope>", "<assessmentName>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("owner").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDueDate").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationEta").GetProperty("eta").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationEta").GetProperty("justification").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("isGracePeriod").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("governanceEmailNotification").GetProperty("disableManagerEmailNotification").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("governanceEmailNotification").GetProperty("disableOwnerEmailNotification").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("ticketNumber").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("ticketLink").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("ticketStatus").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

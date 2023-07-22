@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetHealthReportAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call GetHealthReportAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new HealthReportsClient(credential);
+
+Response response = await client.GetHealthReportAsync("<resourceId>", "<healthReportName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("resourceDetails").GetProperty("source").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("resourceDetails").GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("resourceDetails").GetProperty("connectorId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("environmentDetails").GetProperty("nativeResourceId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("environmentDetails").GetProperty("environmentHierarchyId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("environmentDetails").GetProperty("organizationalHierarchyId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("environmentDetails").GetProperty("subscriptionId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("environmentDetails").GetProperty("tenantId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("healthDataClassification").GetProperty("component").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("healthDataClassification").GetProperty("scenario").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("healthDataClassification").GetProperty("scope").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("status").GetProperty("code").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("status").GetProperty("reason").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("status").GetProperty("lastScannedDate").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("status").GetProperty("statusChangeDate").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("status").GetProperty("firstEvaluationDate").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("affectedDefendersPlans")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("affectedDefendersSubPlans")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("reportAdditionalData").GetProperty("<test>").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("issueKey").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("issueName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("securityValues")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("issueDescription").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("remediationSteps").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("remediationScript").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("issueAdditionalData").GetProperty("<test>").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetHealthReport(string,string,RequestContext)">
+<example>
+This sample shows how to call GetHealthReport with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new HealthReportsClient(credential);
+
+Response response = client.GetHealthReport("<resourceId>", "<healthReportName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("resourceDetails").GetProperty("source").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("resourceDetails").GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("resourceDetails").GetProperty("connectorId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("environmentDetails").GetProperty("nativeResourceId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("environmentDetails").GetProperty("environmentHierarchyId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("environmentDetails").GetProperty("organizationalHierarchyId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("environmentDetails").GetProperty("subscriptionId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("environmentDetails").GetProperty("tenantId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("healthDataClassification").GetProperty("component").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("healthDataClassification").GetProperty("scenario").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("healthDataClassification").GetProperty("scope").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("status").GetProperty("code").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("status").GetProperty("reason").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("status").GetProperty("lastScannedDate").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("status").GetProperty("statusChangeDate").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("status").GetProperty("firstEvaluationDate").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("affectedDefendersPlans")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("affectedDefendersSubPlans")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("reportAdditionalData").GetProperty("<test>").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("issueKey").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("issueName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("securityValues")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("issueDescription").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("remediationSteps").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("remediationScript").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("issueAdditionalData").GetProperty("<test>").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetHealthReportsAsync(string,RequestContext)">
+<example>
+This sample shows how to call GetHealthReportsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new HealthReportsClient(credential);
+
+await foreach (var item in client.GetHealthReportsAsync("<scope>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("resourceDetails").GetProperty("source").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("resourceDetails").GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("resourceDetails").GetProperty("connectorId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("environmentDetails").GetProperty("nativeResourceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("environmentDetails").GetProperty("environmentHierarchyId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("environmentDetails").GetProperty("organizationalHierarchyId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("environmentDetails").GetProperty("subscriptionId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("environmentDetails").GetProperty("tenantId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("healthDataClassification").GetProperty("component").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("healthDataClassification").GetProperty("scenario").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("healthDataClassification").GetProperty("scope").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("status").GetProperty("code").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("status").GetProperty("reason").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("status").GetProperty("lastScannedDate").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("status").GetProperty("statusChangeDate").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("status").GetProperty("firstEvaluationDate").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("affectedDefendersPlans")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("affectedDefendersSubPlans")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("reportAdditionalData").GetProperty("<test>").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("issueKey").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("issueName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("securityValues")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("issueDescription").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("remediationSteps").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("remediationScript").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("issueAdditionalData").GetProperty("<test>").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetHealthReports(string,RequestContext)">
+<example>
+This sample shows how to call GetHealthReports with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new HealthReportsClient(credential);
+
+foreach (var item in client.GetHealthReports("<scope>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("resourceDetails").GetProperty("source").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("resourceDetails").GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("resourceDetails").GetProperty("connectorId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("environmentDetails").GetProperty("nativeResourceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("environmentDetails").GetProperty("environmentHierarchyId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("environmentDetails").GetProperty("organizationalHierarchyId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("environmentDetails").GetProperty("subscriptionId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("environmentDetails").GetProperty("tenantId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("healthDataClassification").GetProperty("component").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("healthDataClassification").GetProperty("scenario").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("healthDataClassification").GetProperty("scope").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("status").GetProperty("code").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("status").GetProperty("reason").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("status").GetProperty("lastScannedDate").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("status").GetProperty("statusChangeDate").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("status").GetProperty("firstEvaluationDate").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("affectedDefendersPlans")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("affectedDefendersSubPlans")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("reportAdditionalData").GetProperty("<test>").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("issueKey").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("issueName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("securityValues")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("issueDescription").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("remediationSteps").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("remediationScript").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("issueAdditionalData").GetProperty("<test>").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

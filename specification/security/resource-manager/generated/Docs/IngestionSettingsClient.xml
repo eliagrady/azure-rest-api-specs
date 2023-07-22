@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetIngestionSettingAsync(string,RequestContext)">
+<example>
+This sample shows how to call GetIngestionSettingAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IngestionSettingsClient("<subscriptionId>", credential);
+
+Response response = await client.GetIngestionSettingAsync("<ingestionSettingName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetIngestionSetting(string,RequestContext)">
+<example>
+This sample shows how to call GetIngestionSetting with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IngestionSettingsClient("<subscriptionId>", credential);
+
+Response response = client.GetIngestionSetting("<ingestionSettingName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="CreateAsync(string,RequestContent,RequestContext)">
+<example>
+This sample shows how to call CreateAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IngestionSettingsClient("<subscriptionId>", credential);
+
+var data = new {};
+
+Response response = await client.CreateAsync("<ingestionSettingName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call CreateAsync with all parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IngestionSettingsClient("<subscriptionId>", credential);
+
+var data = new {
+    properties = new {},
+};
+
+Response response = await client.CreateAsync("<ingestionSettingName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="Create(string,RequestContent,RequestContext)">
+<example>
+This sample shows how to call Create with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IngestionSettingsClient("<subscriptionId>", credential);
+
+var data = new {};
+
+Response response = client.Create("<ingestionSettingName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call Create with all parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IngestionSettingsClient("<subscriptionId>", credential);
+
+var data = new {
+    properties = new {},
+};
+
+Response response = client.Create("<ingestionSettingName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="DeleteAsync(string,RequestContext)">
+<example>
+This sample shows how to call DeleteAsync with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IngestionSettingsClient("<subscriptionId>", credential);
+
+Response response = await client.DeleteAsync("<ingestionSettingName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="Delete(string,RequestContext)">
+<example>
+This sample shows how to call Delete with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IngestionSettingsClient("<subscriptionId>", credential);
+
+Response response = client.Delete("<ingestionSettingName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="GetTokensAsync(string,RequestContext)">
+<example>
+This sample shows how to call GetTokensAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IngestionSettingsClient("<subscriptionId>", credential);
+
+Response response = await client.GetTokensAsync("<ingestionSettingName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("token").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetTokens(string,RequestContext)">
+<example>
+This sample shows how to call GetTokens with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IngestionSettingsClient("<subscriptionId>", credential);
+
+Response response = client.GetTokens("<ingestionSettingName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("token").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetConnectionStringsAsync(string,RequestContext)">
+<example>
+This sample shows how to call GetConnectionStringsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IngestionSettingsClient("<subscriptionId>", credential);
+
+Response response = await client.GetConnectionStringsAsync("<ingestionSettingName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("location").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("value").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetConnectionStrings(string,RequestContext)">
+<example>
+This sample shows how to call GetConnectionStrings with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IngestionSettingsClient("<subscriptionId>", credential);
+
+Response response = client.GetConnectionStrings("<ingestionSettingName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("location").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("value").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetIngestionSettingsAsync(RequestContext)">
+<example>
+This sample shows how to call GetIngestionSettingsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IngestionSettingsClient("<subscriptionId>", credential);
+
+await foreach (var item in client.GetIngestionSettingsAsync(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetIngestionSettings(RequestContext)">
+<example>
+This sample shows how to call GetIngestionSettings with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IngestionSettingsClient("<subscriptionId>", credential);
+
+foreach (var item in client.GetIngestionSettings(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

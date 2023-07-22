@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetSensitivitySettingsAsync(RequestContext)">
+<example>
+This sample shows how to call GetSensitivitySettingsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SensitivitySettingsClient(credential);
+
+Response response = await client.GetSensitivitySettingsAsync(new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("sensitiveInfoTypesIds")[0].ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("sensitivityThresholdLabelOrder").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("sensitivityThresholdLabelId").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mipInformation").GetProperty("mipIntegrationStatus").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mipInformation").GetProperty("labels")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mipInformation").GetProperty("labels")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mipInformation").GetProperty("labels")[0].GetProperty("order").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mipInformation").GetProperty("customInfoTypes")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mipInformation").GetProperty("customInfoTypes")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mipInformation").GetProperty("customInfoTypes")[0].GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mipInformation").GetProperty("builtInInfoTypes")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mipInformation").GetProperty("builtInInfoTypes")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mipInformation").GetProperty("builtInInfoTypes")[0].GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetSensitivitySettings(RequestContext)">
+<example>
+This sample shows how to call GetSensitivitySettings with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SensitivitySettingsClient(credential);
+
+Response response = client.GetSensitivitySettings(new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("sensitiveInfoTypesIds")[0].ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("sensitivityThresholdLabelOrder").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("sensitivityThresholdLabelId").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mipInformation").GetProperty("mipIntegrationStatus").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mipInformation").GetProperty("labels")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mipInformation").GetProperty("labels")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mipInformation").GetProperty("labels")[0].GetProperty("order").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mipInformation").GetProperty("customInfoTypes")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mipInformation").GetProperty("customInfoTypes")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mipInformation").GetProperty("customInfoTypes")[0].GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mipInformation").GetProperty("builtInInfoTypes")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mipInformation").GetProperty("builtInInfoTypes")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("mipInformation").GetProperty("builtInInfoTypes")[0].GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

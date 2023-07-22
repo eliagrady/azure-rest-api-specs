@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetPricingsAsync(RequestContext)">
+<example>
+This sample shows how to call GetPricingsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new PricingsClient("<subscriptionId>", credential);
+
+Response response = await client.GetPricingsAsync(new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pricingTier").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("subPlan").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("freeTrialRemainingTime").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("enablementTime").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("deprecated").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("replacedBy")[0].ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("extensions")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("extensions")[0].GetProperty("isEnabled").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("extensions")[0].GetProperty("additionalExtensionProperties").GetProperty("<test>").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("extensions")[0].GetProperty("operationStatus").GetProperty("code").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("extensions")[0].GetProperty("operationStatus").GetProperty("message").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetPricings(RequestContext)">
+<example>
+This sample shows how to call GetPricings with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new PricingsClient("<subscriptionId>", credential);
+
+Response response = client.GetPricings(new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pricingTier").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("subPlan").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("freeTrialRemainingTime").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("enablementTime").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("deprecated").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("replacedBy")[0].ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("extensions")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("extensions")[0].GetProperty("isEnabled").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("extensions")[0].GetProperty("additionalExtensionProperties").GetProperty("<test>").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("extensions")[0].GetProperty("operationStatus").GetProperty("code").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("extensions")[0].GetProperty("operationStatus").GetProperty("message").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetPricingAsync(string,RequestContext)">
+<example>
+This sample shows how to call GetPricingAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new PricingsClient("<subscriptionId>", credential);
+
+Response response = await client.GetPricingAsync("<pricingName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("pricingTier").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("subPlan").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("freeTrialRemainingTime").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("enablementTime").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("deprecated").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("replacedBy")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extensions")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extensions")[0].GetProperty("isEnabled").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extensions")[0].GetProperty("additionalExtensionProperties").GetProperty("<test>").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extensions")[0].GetProperty("operationStatus").GetProperty("code").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extensions")[0].GetProperty("operationStatus").GetProperty("message").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetPricing(string,RequestContext)">
+<example>
+This sample shows how to call GetPricing with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new PricingsClient("<subscriptionId>", credential);
+
+Response response = client.GetPricing("<pricingName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("pricingTier").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("subPlan").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("freeTrialRemainingTime").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("enablementTime").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("deprecated").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("replacedBy")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extensions")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extensions")[0].GetProperty("isEnabled").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extensions")[0].GetProperty("additionalExtensionProperties").GetProperty("<test>").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extensions")[0].GetProperty("operationStatus").GetProperty("code").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extensions")[0].GetProperty("operationStatus").GetProperty("message").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="UpdateAsync(string,RequestContent,RequestContext)">
+<example>
+This sample shows how to call UpdateAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new PricingsClient("<subscriptionId>", credential);
+
+var data = new {};
+
+Response response = await client.UpdateAsync("<pricingName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call UpdateAsync with all parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new PricingsClient("<subscriptionId>", credential);
+
+var data = new {
+    properties = new {
+        pricingTier = "Free",
+        subPlan = "<subPlan>",
+        extensions = new[] {
+            new {
+                name = "<name>",
+                isEnabled = "True",
+                additionalExtensionProperties = new {
+                    key = new {},
+                },
+            }
+        },
+    },
+};
+
+Response response = await client.UpdateAsync("<pricingName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("pricingTier").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("subPlan").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("freeTrialRemainingTime").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("enablementTime").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("deprecated").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("replacedBy")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extensions")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extensions")[0].GetProperty("isEnabled").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extensions")[0].GetProperty("additionalExtensionProperties").GetProperty("<test>").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extensions")[0].GetProperty("operationStatus").GetProperty("code").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extensions")[0].GetProperty("operationStatus").GetProperty("message").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="Update(string,RequestContent,RequestContext)">
+<example>
+This sample shows how to call Update with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new PricingsClient("<subscriptionId>", credential);
+
+var data = new {};
+
+Response response = client.Update("<pricingName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call Update with all parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new PricingsClient("<subscriptionId>", credential);
+
+var data = new {
+    properties = new {
+        pricingTier = "Free",
+        subPlan = "<subPlan>",
+        extensions = new[] {
+            new {
+                name = "<name>",
+                isEnabled = "True",
+                additionalExtensionProperties = new {
+                    key = new {},
+                },
+            }
+        },
+    },
+};
+
+Response response = client.Update("<pricingName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("pricingTier").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("subPlan").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("freeTrialRemainingTime").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("enablementTime").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("deprecated").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("replacedBy")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extensions")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extensions")[0].GetProperty("isEnabled").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extensions")[0].GetProperty("additionalExtensionProperties").GetProperty("<test>").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extensions")[0].GetProperty("operationStatus").GetProperty("code").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extensions")[0].GetProperty("operationStatus").GetProperty("message").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

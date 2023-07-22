@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetSecureScoreControlDefinitionsAsync(RequestContext)">
+<example>
+This sample shows how to call GetSecureScoreControlDefinitionsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecureScoreControlDefinitionsClient("<subscriptionId>", credential);
+
+await foreach (var item in client.GetSecureScoreControlDefinitionsAsync(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("maxScore").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("source").GetProperty("sourceType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentDefinitions")[0].GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetSecureScoreControlDefinitions(RequestContext)">
+<example>
+This sample shows how to call GetSecureScoreControlDefinitions with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecureScoreControlDefinitionsClient("<subscriptionId>", credential);
+
+foreach (var item in client.GetSecureScoreControlDefinitions(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("maxScore").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("source").GetProperty("sourceType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentDefinitions")[0].GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetSecureScoreControlDefinitionsBySubscriptionAsync(RequestContext)">
+<example>
+This sample shows how to call GetSecureScoreControlDefinitionsBySubscriptionAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecureScoreControlDefinitionsClient("<subscriptionId>", credential);
+
+await foreach (var item in client.GetSecureScoreControlDefinitionsBySubscriptionAsync(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("maxScore").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("source").GetProperty("sourceType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentDefinitions")[0].GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetSecureScoreControlDefinitionsBySubscription(RequestContext)">
+<example>
+This sample shows how to call GetSecureScoreControlDefinitionsBySubscription with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecureScoreControlDefinitionsClient("<subscriptionId>", credential);
+
+foreach (var item in client.GetSecureScoreControlDefinitionsBySubscription(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("maxScore").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("source").GetProperty("sourceType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentDefinitions")[0].GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

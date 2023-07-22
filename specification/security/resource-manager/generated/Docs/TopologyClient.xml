@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetTopologyAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call GetTopologyAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new TopologyClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.GetTopologyAsync("<resourceGroupName>", "<topologyResourceName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("calculatedDateTime").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("resourceId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("severity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("recommendationsExist").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("networkZones").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("topologyScore").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("location").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("parents")[0].GetProperty("resourceId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("children")[0].GetProperty("resourceId").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetTopology(string,string,RequestContext)">
+<example>
+This sample shows how to call GetTopology with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new TopologyClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.GetTopology("<resourceGroupName>", "<topologyResourceName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("calculatedDateTime").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("resourceId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("severity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("recommendationsExist").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("networkZones").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("topologyScore").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("location").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("parents")[0].GetProperty("resourceId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("children")[0].GetProperty("resourceId").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetTopologiesAsync(RequestContext)">
+<example>
+This sample shows how to call GetTopologiesAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new TopologyClient("<subscriptionId>", "<ascLocation>", credential);
+
+await foreach (var item in client.GetTopologiesAsync(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("calculatedDateTime").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("resourceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("severity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("recommendationsExist").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("networkZones").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("topologyScore").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("location").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("parents")[0].GetProperty("resourceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("children")[0].GetProperty("resourceId").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetTopologies(RequestContext)">
+<example>
+This sample shows how to call GetTopologies with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new TopologyClient("<subscriptionId>", "<ascLocation>", credential);
+
+foreach (var item in client.GetTopologies(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("calculatedDateTime").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("resourceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("severity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("recommendationsExist").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("networkZones").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("topologyScore").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("location").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("parents")[0].GetProperty("resourceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("children")[0].GetProperty("resourceId").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetTopologiesByHomeRegionAsync(RequestContext)">
+<example>
+This sample shows how to call GetTopologiesByHomeRegionAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new TopologyClient("<subscriptionId>", "<ascLocation>", credential);
+
+await foreach (var item in client.GetTopologiesByHomeRegionAsync(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("calculatedDateTime").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("resourceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("severity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("recommendationsExist").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("networkZones").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("topologyScore").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("location").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("parents")[0].GetProperty("resourceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("children")[0].GetProperty("resourceId").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetTopologiesByHomeRegion(RequestContext)">
+<example>
+This sample shows how to call GetTopologiesByHomeRegion with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new TopologyClient("<subscriptionId>", "<ascLocation>", credential);
+
+foreach (var item in client.GetTopologiesByHomeRegion(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("calculatedDateTime").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("resourceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("severity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("recommendationsExist").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("networkZones").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("topologyScore").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("location").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("parents")[0].GetProperty("resourceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topologyResources")[0].GetProperty("children")[0].GetProperty("resourceId").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

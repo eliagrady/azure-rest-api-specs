@@ -167,7 +167,7 @@
         },
         "operationStatus": {
           "type": "object",
-          "$ref": "#/definitions/OperationStatus",
+          "$ref": "../../../common/v1/types.json#/definitions/OperationStatus",
           "readOnly": true,
           "description": "Upon failure or partial success. Additional data describing Malware Scanning enable/disable operation."
         }
@@ -198,26 +198,12 @@
         },
         "operationStatus": {
           "type": "object",
-          "$ref": "#/definitions/OperationStatus",
+          "$ref": "../../../common/v1/types.json#/definitions/OperationStatus",
           "readOnly": true,
           "description": "Upon failure or partial success. Additional data describing Sensitive Data Discovery enable/disable operation."
         }
       },
       "description": "Properties of Sensitive Data Discovery."
-    },
-    "OperationStatus": {
-      "type": "object",
-      "description": "A status describing the success/failure of the enablement/disablement operation.",
-      "properties": {
-        "code": {
-          "type": "string",
-          "description": "The operation status code."
-        },
-        "message": {
-          "type": "string",
-          "description": "Additional information regarding the success/failure of the operation."
-        }
-      }
     }
   },
   "parameters": {

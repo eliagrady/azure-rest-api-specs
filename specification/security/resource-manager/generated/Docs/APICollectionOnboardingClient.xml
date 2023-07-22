@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="CreateAsync(string,string,string,RequestContext)">
+<example>
+This sample shows how to call CreateAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new APICollectionOnboardingClient("<subscriptionId>", credential);
+
+Response response = await client.CreateAsync("<resourceGroupName>", "<serviceName>", "<apiCollectionId>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("<test>").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="Create(string,string,string,RequestContext)">
+<example>
+This sample shows how to call Create with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new APICollectionOnboardingClient("<subscriptionId>", credential);
+
+Response response = client.Create("<resourceGroupName>", "<serviceName>", "<apiCollectionId>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("<test>").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

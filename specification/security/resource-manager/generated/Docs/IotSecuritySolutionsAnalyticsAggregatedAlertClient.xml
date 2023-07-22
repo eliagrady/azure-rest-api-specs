@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetIotSecuritySolutionsAnalyticsAggregatedAlertAsync(string,string,string,RequestContext)">
+<example>
+This sample shows how to call GetIotSecuritySolutionsAnalyticsAggregatedAlertAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IotSecuritySolutionsAnalyticsAggregatedAlertClient("<subscriptionId>", credential);
+
+Response response = await client.GetIotSecuritySolutionsAnalyticsAggregatedAlertAsync("<resourceGroupName>", "<solutionName>", "<aggregatedAlertName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertDisplayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("aggregatedDateUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vendorName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("reportedSeverity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationSteps").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("count").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("effectedResourceType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("systemSource").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("actionTaken").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("logAnalyticsQuery").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topDevicesList")[0].GetProperty("deviceId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topDevicesList")[0].GetProperty("alertsCount").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topDevicesList")[0].GetProperty("lastOccurrence").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetIotSecuritySolutionsAnalyticsAggregatedAlert(string,string,string,RequestContext)">
+<example>
+This sample shows how to call GetIotSecuritySolutionsAnalyticsAggregatedAlert with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IotSecuritySolutionsAnalyticsAggregatedAlertClient("<subscriptionId>", credential);
+
+Response response = client.GetIotSecuritySolutionsAnalyticsAggregatedAlert("<resourceGroupName>", "<solutionName>", "<aggregatedAlertName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertDisplayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("aggregatedDateUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vendorName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("reportedSeverity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationSteps").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("count").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("effectedResourceType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("systemSource").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("actionTaken").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("logAnalyticsQuery").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topDevicesList")[0].GetProperty("deviceId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topDevicesList")[0].GetProperty("alertsCount").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("topDevicesList")[0].GetProperty("lastOccurrence").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="DismissAsync(string,string,string,RequestContext)">
+<example>
+This sample shows how to call DismissAsync with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IotSecuritySolutionsAnalyticsAggregatedAlertClient("<subscriptionId>", credential);
+
+Response response = await client.DismissAsync("<resourceGroupName>", "<solutionName>", "<aggregatedAlertName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="Dismiss(string,string,string,RequestContext)">
+<example>
+This sample shows how to call Dismiss with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IotSecuritySolutionsAnalyticsAggregatedAlertClient("<subscriptionId>", credential);
+
+Response response = client.Dismiss("<resourceGroupName>", "<solutionName>", "<aggregatedAlertName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="GetIotSecuritySolutionsAnalyticsAggregatedAlertsAsync(string,string,int?,RequestContext)">
+<example>
+This sample shows how to call GetIotSecuritySolutionsAnalyticsAggregatedAlertsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IotSecuritySolutionsAnalyticsAggregatedAlertClient("<subscriptionId>", credential);
+
+await foreach (var item in client.GetIotSecuritySolutionsAnalyticsAggregatedAlertsAsync("<resourceGroupName>", "<solutionName>", 1234, new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertDisplayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("aggregatedDateUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("vendorName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("reportedSeverity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationSteps").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("count").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("effectedResourceType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("systemSource").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("actionTaken").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("logAnalyticsQuery").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topDevicesList")[0].GetProperty("deviceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topDevicesList")[0].GetProperty("alertsCount").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topDevicesList")[0].GetProperty("lastOccurrence").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetIotSecuritySolutionsAnalyticsAggregatedAlerts(string,string,int?,RequestContext)">
+<example>
+This sample shows how to call GetIotSecuritySolutionsAnalyticsAggregatedAlerts with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IotSecuritySolutionsAnalyticsAggregatedAlertClient("<subscriptionId>", credential);
+
+foreach (var item in client.GetIotSecuritySolutionsAnalyticsAggregatedAlerts("<resourceGroupName>", "<solutionName>", 1234, new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertDisplayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("aggregatedDateUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("vendorName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("reportedSeverity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationSteps").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("count").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("effectedResourceType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("systemSource").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("actionTaken").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("logAnalyticsQuery").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topDevicesList")[0].GetProperty("deviceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topDevicesList")[0].GetProperty("alertsCount").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("topDevicesList")[0].GetProperty("lastOccurrence").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

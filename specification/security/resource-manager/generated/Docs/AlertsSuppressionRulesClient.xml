@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetAlertsSuppressionRuleAsync(string,RequestContext)">
+<example>
+This sample shows how to call GetAlertsSuppressionRuleAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsSuppressionRulesClient("<subscriptionId>", credential);
+
+Response response = await client.GetAlertsSuppressionRuleAsync("<alertsSuppressionRuleName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("lastModifiedUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("expirationDateUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("reason").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("comment").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("suppressionAlertsScope").GetProperty("allOf")[0].GetProperty("field").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetAlertsSuppressionRule(string,RequestContext)">
+<example>
+This sample shows how to call GetAlertsSuppressionRule with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsSuppressionRulesClient("<subscriptionId>", credential);
+
+Response response = client.GetAlertsSuppressionRule("<alertsSuppressionRuleName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("lastModifiedUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("expirationDateUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("reason").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("comment").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("suppressionAlertsScope").GetProperty("allOf")[0].GetProperty("field").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="UpdateAsync(string,RequestContent,RequestContext)">
+<example>
+This sample shows how to call UpdateAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsSuppressionRulesClient("<subscriptionId>", credential);
+
+var data = new {};
+
+Response response = await client.UpdateAsync("<alertsSuppressionRuleName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call UpdateAsync with all parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsSuppressionRulesClient("<subscriptionId>", credential);
+
+var data = new {
+    properties = new {
+        alertType = "<alertType>",
+        expirationDateUtc = "2022-05-10T18:57:31.2311892Z",
+        reason = "<reason>",
+        state = "Enabled",
+        comment = "<comment>",
+        suppressionAlertsScope = new {
+            allOf = new[] {
+                new {
+                    field = "<field>",
+                }
+            },
+        },
+    },
+};
+
+Response response = await client.UpdateAsync("<alertsSuppressionRuleName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("lastModifiedUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("expirationDateUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("reason").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("comment").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("suppressionAlertsScope").GetProperty("allOf")[0].GetProperty("field").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="Update(string,RequestContent,RequestContext)">
+<example>
+This sample shows how to call Update with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsSuppressionRulesClient("<subscriptionId>", credential);
+
+var data = new {};
+
+Response response = client.Update("<alertsSuppressionRuleName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call Update with all parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsSuppressionRulesClient("<subscriptionId>", credential);
+
+var data = new {
+    properties = new {
+        alertType = "<alertType>",
+        expirationDateUtc = "2022-05-10T18:57:31.2311892Z",
+        reason = "<reason>",
+        state = "Enabled",
+        comment = "<comment>",
+        suppressionAlertsScope = new {
+            allOf = new[] {
+                new {
+                    field = "<field>",
+                }
+            },
+        },
+    },
+};
+
+Response response = client.Update("<alertsSuppressionRuleName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("lastModifiedUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("expirationDateUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("reason").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("comment").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("suppressionAlertsScope").GetProperty("allOf")[0].GetProperty("field").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="DeleteAsync(string,RequestContext)">
+<example>
+This sample shows how to call DeleteAsync with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsSuppressionRulesClient("<subscriptionId>", credential);
+
+Response response = await client.DeleteAsync("<alertsSuppressionRuleName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="Delete(string,RequestContext)">
+<example>
+This sample shows how to call Delete with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsSuppressionRulesClient("<subscriptionId>", credential);
+
+Response response = client.Delete("<alertsSuppressionRuleName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="GetAlertsSuppressionRulesAsync(string,RequestContext)">
+<example>
+This sample shows how to call GetAlertsSuppressionRulesAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsSuppressionRulesClient("<subscriptionId>", credential);
+
+await foreach (var item in client.GetAlertsSuppressionRulesAsync("<alertType>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("lastModifiedUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("expirationDateUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("reason").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("comment").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("suppressionAlertsScope").GetProperty("allOf")[0].GetProperty("field").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetAlertsSuppressionRules(string,RequestContext)">
+<example>
+This sample shows how to call GetAlertsSuppressionRules with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsSuppressionRulesClient("<subscriptionId>", credential);
+
+foreach (var item in client.GetAlertsSuppressionRules("<alertType>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("lastModifiedUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("expirationDateUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("reason").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("comment").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("suppressionAlertsScope").GetProperty("allOf")[0].GetProperty("field").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

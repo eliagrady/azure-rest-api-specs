@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetAllSecuritySolutionsReferenceDataAsync(RequestContext)">
+<example>
+This sample shows how to call GetAllSecuritySolutionsReferenceDataAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecuritySolutionsReferenceDataClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.GetAllSecuritySolutionsReferenceDataAsync(new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("securityFamily").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("alertVendorName").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("packageInfoUrl").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("productName").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("publisher").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("publisherDisplayName").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("template").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetAllSecuritySolutionsReferenceData(RequestContext)">
+<example>
+This sample shows how to call GetAllSecuritySolutionsReferenceData with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecuritySolutionsReferenceDataClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.GetAllSecuritySolutionsReferenceData(new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("securityFamily").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("alertVendorName").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("packageInfoUrl").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("productName").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("publisher").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("publisherDisplayName").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("template").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetAllSecuritySolutionsReferenceDataByHomeRegionAsync(RequestContext)">
+<example>
+This sample shows how to call GetAllSecuritySolutionsReferenceDataByHomeRegionAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecuritySolutionsReferenceDataClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.GetAllSecuritySolutionsReferenceDataByHomeRegionAsync(new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("securityFamily").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("alertVendorName").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("packageInfoUrl").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("productName").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("publisher").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("publisherDisplayName").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("template").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetAllSecuritySolutionsReferenceDataByHomeRegion(RequestContext)">
+<example>
+This sample shows how to call GetAllSecuritySolutionsReferenceDataByHomeRegion with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecuritySolutionsReferenceDataClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.GetAllSecuritySolutionsReferenceDataByHomeRegion(new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("securityFamily").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("alertVendorName").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("packageInfoUrl").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("productName").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("publisher").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("publisherDisplayName").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("template").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

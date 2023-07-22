@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetSettingAsync(string,RequestContext)">
+<example>
+This sample shows how to call GetSettingAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SettingsClient("<subscriptionId>", credential);
+
+Response response = await client.GetSettingAsync("<settingName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("kind").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetSetting(string,RequestContext)">
+<example>
+This sample shows how to call GetSetting with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SettingsClient("<subscriptionId>", credential);
+
+Response response = client.GetSetting("<settingName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("kind").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="UpdateAsync(string,RequestContent,RequestContext)">
+<example>
+This sample shows how to call UpdateAsync with required parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SettingsClient("<subscriptionId>", credential);
+
+var data = new {
+    kind = "DataExportSettings",
+};
+
+Response response = await client.UpdateAsync("<settingName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("kind").ToString());
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call UpdateAsync with all parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SettingsClient("<subscriptionId>", credential);
+
+var data = new {
+    properties = new {
+        enabled = true,
+    },
+    kind = "DataExportSettings",
+};
+
+Response response = await client.UpdateAsync("<settingName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("kind").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="Update(string,RequestContent,RequestContext)">
+<example>
+This sample shows how to call Update with required parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SettingsClient("<subscriptionId>", credential);
+
+var data = new {
+    kind = "DataExportSettings",
+};
+
+Response response = client.Update("<settingName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("kind").ToString());
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call Update with all parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SettingsClient("<subscriptionId>", credential);
+
+var data = new {
+    properties = new {
+        enabled = true,
+    },
+    kind = "DataExportSettings",
+};
+
+Response response = client.Update("<settingName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("kind").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetSettingsAsync(RequestContext)">
+<example>
+This sample shows how to call GetSettingsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SettingsClient("<subscriptionId>", credential);
+
+await foreach (var item in client.GetSettingsAsync(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("kind").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetSettings(RequestContext)">
+<example>
+This sample shows how to call GetSettings with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SettingsClient("<subscriptionId>", credential);
+
+foreach (var item in client.GetSettings(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("kind").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

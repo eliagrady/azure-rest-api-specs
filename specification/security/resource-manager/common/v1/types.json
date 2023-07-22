@@ -336,33 +336,35 @@
         }
       }
     },
-    "ExternalSecuritySolutionKind": {
+    "OperationStatus": {
       "type": "object",
-      "description": "Describes an Azure resource with kind",
+      "description": "A status describing the success/failure of the operation.",
       "properties": {
-        "kind": {
+        "code": {
           "type": "string",
-          "description": "The kind of the external solution",
+          "description": "The operation status code.",
           "enum": [
-            "CEF",
-            "ATA",
-            "AAD"
+            "Succeeded",
+            "Failed"
           ],
           "x-ms-enum": {
-            "name": "ExternalSecuritySolutionKind",
+            "name": "code",
             "modelAsString": true,
             "values": [
               {
-                "value": "CEF"
+                "value": "Succeeded",
+                "description": "Operation success indicator."
               },
               {
-                "value": "ATA"
-              },
-              {
-                "value": "AAD"
+                "value": "Failed",
+                "description": "Operation failure indicator. See operation status message for more details."
               }
             ]
           }
+        },
+        "message": {
+          "type": "string",
+          "description": "Additional information regarding the success/failure of the operation."
         }
       }
     }

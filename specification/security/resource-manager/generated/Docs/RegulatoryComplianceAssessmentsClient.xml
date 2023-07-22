@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetRegulatoryComplianceAssessmentAsync(string,string,string,RequestContext)">
+<example>
+This sample shows how to call GetRegulatoryComplianceAssessmentAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new RegulatoryComplianceAssessmentsClient("<subscriptionId>", credential);
+
+Response response = await client.GetRegulatoryComplianceAssessmentAsync("<regulatoryComplianceStandardName>", "<regulatoryComplianceControlName>", "<regulatoryComplianceAssessmentName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentDetailsLink").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("passedResources").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("failedResources").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("skippedResources").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("unsupportedResources").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetRegulatoryComplianceAssessment(string,string,string,RequestContext)">
+<example>
+This sample shows how to call GetRegulatoryComplianceAssessment with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new RegulatoryComplianceAssessmentsClient("<subscriptionId>", credential);
+
+Response response = client.GetRegulatoryComplianceAssessment("<regulatoryComplianceStandardName>", "<regulatoryComplianceControlName>", "<regulatoryComplianceAssessmentName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentDetailsLink").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("passedResources").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("failedResources").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("skippedResources").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("unsupportedResources").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetRegulatoryComplianceAssessmentsAsync(string,string,string,RequestContext)">
+<example>
+This sample shows how to call GetRegulatoryComplianceAssessmentsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new RegulatoryComplianceAssessmentsClient("<subscriptionId>", credential);
+
+await foreach (var item in client.GetRegulatoryComplianceAssessmentsAsync("<regulatoryComplianceStandardName>", "<regulatoryComplianceControlName>", "<filter>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentDetailsLink").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("passedResources").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("failedResources").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("skippedResources").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("unsupportedResources").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetRegulatoryComplianceAssessments(string,string,string,RequestContext)">
+<example>
+This sample shows how to call GetRegulatoryComplianceAssessments with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new RegulatoryComplianceAssessmentsClient("<subscriptionId>", credential);
+
+foreach (var item in client.GetRegulatoryComplianceAssessments("<regulatoryComplianceStandardName>", "<regulatoryComplianceControlName>", "<filter>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentDetailsLink").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("passedResources").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("failedResources").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("skippedResources").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("unsupportedResources").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

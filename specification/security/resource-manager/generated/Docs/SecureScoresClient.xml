@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetSecureScoreAsync(string,RequestContext)">
+<example>
+This sample shows how to call GetSecureScoreAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecureScoresClient("<subscriptionId>", credential);
+
+Response response = await client.GetSecureScoreAsync("<secureScoreName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("max").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("current").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("percentage").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("weight").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetSecureScore(string,RequestContext)">
+<example>
+This sample shows how to call GetSecureScore with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecureScoresClient("<subscriptionId>", credential);
+
+Response response = client.GetSecureScore("<secureScoreName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("max").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("current").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("percentage").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("weight").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetSecureScoresAsync(RequestContext)">
+<example>
+This sample shows how to call GetSecureScoresAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecureScoresClient("<subscriptionId>", credential);
+
+await foreach (var item in client.GetSecureScoresAsync(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("max").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("current").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("percentage").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("weight").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetSecureScores(RequestContext)">
+<example>
+This sample shows how to call GetSecureScores with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecureScoresClient("<subscriptionId>", credential);
+
+foreach (var item in client.GetSecureScores(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("max").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("current").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("percentage").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("weight").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

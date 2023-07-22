@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetSecurityConnectorApplicationsAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call GetSecurityConnectorApplicationsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecurityConnectorApplicationsClient("<subscriptionId>", credential);
+
+await foreach (var item in client.GetSecurityConnectorApplicationsAsync("<resourceGroupName>", "<securityConnectorName>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("sourceResourceType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("conditionSets")[0].ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetSecurityConnectorApplications(string,string,RequestContext)">
+<example>
+This sample shows how to call GetSecurityConnectorApplications with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecurityConnectorApplicationsClient("<subscriptionId>", credential);
+
+foreach (var item in client.GetSecurityConnectorApplications("<resourceGroupName>", "<securityConnectorName>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("sourceResourceType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("conditionSets")[0].ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

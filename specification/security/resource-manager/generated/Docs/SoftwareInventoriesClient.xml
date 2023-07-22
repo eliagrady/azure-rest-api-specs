@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetSoftwareInventoryAsync(string,string,string,string,string,RequestContext)">
+<example>
+This sample shows how to call GetSoftwareInventoryAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SoftwareInventoriesClient("<subscriptionId>", credential);
+
+Response response = await client.GetSoftwareInventoryAsync("<resourceGroupName>", "<resourceNamespace>", "<resourceType>", "<resourceName>", "<softwareName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("deviceId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("osPlatform").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vendor").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("softwareName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("version").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("endOfSupportStatus").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("endOfSupportDate").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("numberOfKnownVulnerabilities").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("firstSeenAt").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetSoftwareInventory(string,string,string,string,string,RequestContext)">
+<example>
+This sample shows how to call GetSoftwareInventory with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SoftwareInventoriesClient("<subscriptionId>", credential);
+
+Response response = client.GetSoftwareInventory("<resourceGroupName>", "<resourceNamespace>", "<resourceType>", "<resourceName>", "<softwareName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("deviceId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("osPlatform").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vendor").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("softwareName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("version").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("endOfSupportStatus").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("endOfSupportDate").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("numberOfKnownVulnerabilities").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("firstSeenAt").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetSoftwareInventoriesByExtendedResourceAsync(string,string,string,string,RequestContext)">
+<example>
+This sample shows how to call GetSoftwareInventoriesByExtendedResourceAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SoftwareInventoriesClient("<subscriptionId>", credential);
+
+await foreach (var item in client.GetSoftwareInventoriesByExtendedResourceAsync("<resourceGroupName>", "<resourceNamespace>", "<resourceType>", "<resourceName>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("deviceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("osPlatform").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("vendor").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("softwareName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("version").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("endOfSupportStatus").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("endOfSupportDate").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("numberOfKnownVulnerabilities").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("firstSeenAt").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetSoftwareInventoriesByExtendedResource(string,string,string,string,RequestContext)">
+<example>
+This sample shows how to call GetSoftwareInventoriesByExtendedResource with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SoftwareInventoriesClient("<subscriptionId>", credential);
+
+foreach (var item in client.GetSoftwareInventoriesByExtendedResource("<resourceGroupName>", "<resourceNamespace>", "<resourceType>", "<resourceName>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("deviceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("osPlatform").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("vendor").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("softwareName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("version").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("endOfSupportStatus").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("endOfSupportDate").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("numberOfKnownVulnerabilities").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("firstSeenAt").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetSoftwareInventoriesBySubscriptionAsync(RequestContext)">
+<example>
+This sample shows how to call GetSoftwareInventoriesBySubscriptionAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SoftwareInventoriesClient("<subscriptionId>", credential);
+
+await foreach (var item in client.GetSoftwareInventoriesBySubscriptionAsync(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("deviceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("osPlatform").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("vendor").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("softwareName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("version").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("endOfSupportStatus").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("endOfSupportDate").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("numberOfKnownVulnerabilities").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("firstSeenAt").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetSoftwareInventoriesBySubscription(RequestContext)">
+<example>
+This sample shows how to call GetSoftwareInventoriesBySubscription with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SoftwareInventoriesClient("<subscriptionId>", credential);
+
+foreach (var item in client.GetSoftwareInventoriesBySubscription(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("deviceId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("osPlatform").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("vendor").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("softwareName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("version").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("endOfSupportStatus").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("endOfSupportDate").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("numberOfKnownVulnerabilities").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("firstSeenAt").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

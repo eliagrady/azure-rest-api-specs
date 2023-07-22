@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetDiscoveredSecuritySolutionAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call GetDiscoveredSecuritySolutionAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new DiscoveredSecuritySolutionsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.GetDiscoveredSecuritySolutionAsync("<resourceGroupName>", "<discoveredSecuritySolutionName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("securityFamily").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("offer").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("publisher").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("sku").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetDiscoveredSecuritySolution(string,string,RequestContext)">
+<example>
+This sample shows how to call GetDiscoveredSecuritySolution with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new DiscoveredSecuritySolutionsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.GetDiscoveredSecuritySolution("<resourceGroupName>", "<discoveredSecuritySolutionName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("securityFamily").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("offer").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("publisher").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("sku").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetDiscoveredSecuritySolutionsAsync(RequestContext)">
+<example>
+This sample shows how to call GetDiscoveredSecuritySolutionsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new DiscoveredSecuritySolutionsClient("<subscriptionId>", "<ascLocation>", credential);
+
+await foreach (var item in client.GetDiscoveredSecuritySolutionsAsync(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("securityFamily").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("offer").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("publisher").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("sku").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetDiscoveredSecuritySolutions(RequestContext)">
+<example>
+This sample shows how to call GetDiscoveredSecuritySolutions with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new DiscoveredSecuritySolutionsClient("<subscriptionId>", "<ascLocation>", credential);
+
+foreach (var item in client.GetDiscoveredSecuritySolutions(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("securityFamily").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("offer").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("publisher").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("sku").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetDiscoveredSecuritySolutionsByHomeRegionAsync(RequestContext)">
+<example>
+This sample shows how to call GetDiscoveredSecuritySolutionsByHomeRegionAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new DiscoveredSecuritySolutionsClient("<subscriptionId>", "<ascLocation>", credential);
+
+await foreach (var item in client.GetDiscoveredSecuritySolutionsByHomeRegionAsync(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("securityFamily").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("offer").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("publisher").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("sku").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetDiscoveredSecuritySolutionsByHomeRegion(RequestContext)">
+<example>
+This sample shows how to call GetDiscoveredSecuritySolutionsByHomeRegion with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new DiscoveredSecuritySolutionsClient("<subscriptionId>", "<ascLocation>", credential);
+
+foreach (var item in client.GetDiscoveredSecuritySolutionsByHomeRegion(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("securityFamily").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("offer").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("publisher").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("sku").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

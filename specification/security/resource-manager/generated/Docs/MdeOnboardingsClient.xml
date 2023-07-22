@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetMdeOnboardingsAsync(RequestContext)">
+<example>
+This sample shows how to call GetMdeOnboardingsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new MdeOnboardingsClient("<subscriptionId>", credential);
+
+Response response = await client.GetMdeOnboardingsAsync(new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("onboardingPackageWindows").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("onboardingPackageLinux").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetMdeOnboardings(RequestContext)">
+<example>
+This sample shows how to call GetMdeOnboardings with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new MdeOnboardingsClient("<subscriptionId>", credential);
+
+Response response = client.GetMdeOnboardings(new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("onboardingPackageWindows").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("onboardingPackageLinux").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetMdeOnboardingAsync(RequestContext)">
+<example>
+This sample shows how to call GetMdeOnboardingAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new MdeOnboardingsClient("<subscriptionId>", credential);
+
+Response response = await client.GetMdeOnboardingAsync(new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("onboardingPackageWindows").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("onboardingPackageLinux").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetMdeOnboarding(RequestContext)">
+<example>
+This sample shows how to call GetMdeOnboarding with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new MdeOnboardingsClient("<subscriptionId>", credential);
+
+Response response = client.GetMdeOnboarding(new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("onboardingPackageWindows").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("onboardingPackageLinux").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

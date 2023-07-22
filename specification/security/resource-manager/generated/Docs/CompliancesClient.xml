@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetComplianceAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call GetComplianceAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new CompliancesClient(credential);
+
+Response response = await client.GetComplianceAsync("<scope>", "<complianceName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentTimestampUtcDate").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("resourceCount").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentResult")[0].GetProperty("segmentType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentResult")[0].GetProperty("percentage").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetCompliance(string,string,RequestContext)">
+<example>
+This sample shows how to call GetCompliance with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new CompliancesClient(credential);
+
+Response response = client.GetCompliance("<scope>", "<complianceName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentTimestampUtcDate").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("resourceCount").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentResult")[0].GetProperty("segmentType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentResult")[0].GetProperty("percentage").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetCompliancesAsync(string,RequestContext)">
+<example>
+This sample shows how to call GetCompliancesAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new CompliancesClient(credential);
+
+await foreach (var item in client.GetCompliancesAsync("<scope>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentTimestampUtcDate").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("resourceCount").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentResult")[0].GetProperty("segmentType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentResult")[0].GetProperty("percentage").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetCompliances(string,RequestContext)">
+<example>
+This sample shows how to call GetCompliances with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new CompliancesClient(credential);
+
+foreach (var item in client.GetCompliances("<scope>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentTimestampUtcDate").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("resourceCount").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentResult")[0].GetProperty("segmentType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentResult")[0].GetProperty("percentage").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

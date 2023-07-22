@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetRegulatoryComplianceControlAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call GetRegulatoryComplianceControlAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new RegulatoryComplianceControlsClient("<subscriptionId>", credential);
+
+Response response = await client.GetRegulatoryComplianceControlAsync("<regulatoryComplianceStandardName>", "<regulatoryComplianceControlName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("passedAssessments").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("failedAssessments").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("skippedAssessments").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetRegulatoryComplianceControl(string,string,RequestContext)">
+<example>
+This sample shows how to call GetRegulatoryComplianceControl with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new RegulatoryComplianceControlsClient("<subscriptionId>", credential);
+
+Response response = client.GetRegulatoryComplianceControl("<regulatoryComplianceStandardName>", "<regulatoryComplianceControlName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("passedAssessments").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("failedAssessments").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("skippedAssessments").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetRegulatoryComplianceControlsAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call GetRegulatoryComplianceControlsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new RegulatoryComplianceControlsClient("<subscriptionId>", credential);
+
+await foreach (var item in client.GetRegulatoryComplianceControlsAsync("<regulatoryComplianceStandardName>", "<filter>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("passedAssessments").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("failedAssessments").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("skippedAssessments").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetRegulatoryComplianceControls(string,string,RequestContext)">
+<example>
+This sample shows how to call GetRegulatoryComplianceControls with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new RegulatoryComplianceControlsClient("<subscriptionId>", credential);
+
+foreach (var item in client.GetRegulatoryComplianceControls("<regulatoryComplianceStandardName>", "<filter>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("passedAssessments").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("failedAssessments").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("skippedAssessments").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetSecureScoreControlsBySecureScoreAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call GetSecureScoreControlsBySecureScoreAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecureScoreControlsClient("<subscriptionId>", credential);
+
+await foreach (var item in client.GetSecureScoreControlsBySecureScoreAsync("<secureScoreName>", "<expand>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("max").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("current").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("percentage").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("healthyResourceCount").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("unhealthyResourceCount").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("notApplicableResourceCount").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("weight").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("properties").GetProperty("maxScore").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("properties").GetProperty("source").GetProperty("sourceType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("properties").GetProperty("assessmentDefinitions")[0].GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetSecureScoreControlsBySecureScore(string,string,RequestContext)">
+<example>
+This sample shows how to call GetSecureScoreControlsBySecureScore with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecureScoreControlsClient("<subscriptionId>", credential);
+
+foreach (var item in client.GetSecureScoreControlsBySecureScore("<secureScoreName>", "<expand>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("max").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("current").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("percentage").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("healthyResourceCount").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("unhealthyResourceCount").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("notApplicableResourceCount").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("weight").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("properties").GetProperty("maxScore").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("properties").GetProperty("source").GetProperty("sourceType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("properties").GetProperty("assessmentDefinitions")[0].GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetSecureScoreControlsAsync(string,RequestContext)">
+<example>
+This sample shows how to call GetSecureScoreControlsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecureScoreControlsClient("<subscriptionId>", credential);
+
+await foreach (var item in client.GetSecureScoreControlsAsync("<expand>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("max").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("current").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("percentage").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("healthyResourceCount").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("unhealthyResourceCount").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("notApplicableResourceCount").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("weight").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("properties").GetProperty("maxScore").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("properties").GetProperty("source").GetProperty("sourceType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("properties").GetProperty("assessmentDefinitions")[0].GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetSecureScoreControls(string,RequestContext)">
+<example>
+This sample shows how to call GetSecureScoreControls with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecureScoreControlsClient("<subscriptionId>", credential);
+
+foreach (var item in client.GetSecureScoreControls("<expand>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("max").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("current").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("score").GetProperty("percentage").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("healthyResourceCount").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("unhealthyResourceCount").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("notApplicableResourceCount").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("weight").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("properties").GetProperty("maxScore").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("properties").GetProperty("source").GetProperty("sourceType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("properties").GetProperty("assessmentDefinitions")[0].GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("definition").GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

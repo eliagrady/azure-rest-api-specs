@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetSecurityContactAsync(string,RequestContext)">
+<example>
+This sample shows how to call GetSecurityContactAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecurityContactsClient("<subscriptionId>", credential);
+
+Response response = await client.GetSecurityContactAsync("<securityContactName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("emails").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("phone").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertNotifications").GetProperty("state").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertNotifications").GetProperty("minimalSeverity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("notificationsByRole").GetProperty("state").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("notificationsByRole").GetProperty("roles")[0].ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetSecurityContact(string,RequestContext)">
+<example>
+This sample shows how to call GetSecurityContact with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecurityContactsClient("<subscriptionId>", credential);
+
+Response response = client.GetSecurityContact("<securityContactName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("emails").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("phone").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertNotifications").GetProperty("state").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertNotifications").GetProperty("minimalSeverity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("notificationsByRole").GetProperty("state").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("notificationsByRole").GetProperty("roles")[0].ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="CreateAsync(string,RequestContent,RequestContext)">
+<example>
+This sample shows how to call CreateAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecurityContactsClient("<subscriptionId>", credential);
+
+var data = new {};
+
+Response response = await client.CreateAsync("<securityContactName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call CreateAsync with all parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecurityContactsClient("<subscriptionId>", credential);
+
+var data = new {
+    properties = new {
+        emails = "<emails>",
+        phone = "<phone>",
+        alertNotifications = new {
+            state = "On",
+            minimalSeverity = "High",
+        },
+        notificationsByRole = new {
+            state = "On",
+            roles = new[] {
+                "AccountAdmin"
+            },
+        },
+    },
+};
+
+Response response = await client.CreateAsync("<securityContactName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("emails").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("phone").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertNotifications").GetProperty("state").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertNotifications").GetProperty("minimalSeverity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("notificationsByRole").GetProperty("state").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("notificationsByRole").GetProperty("roles")[0].ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="Create(string,RequestContent,RequestContext)">
+<example>
+This sample shows how to call Create with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecurityContactsClient("<subscriptionId>", credential);
+
+var data = new {};
+
+Response response = client.Create("<securityContactName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call Create with all parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecurityContactsClient("<subscriptionId>", credential);
+
+var data = new {
+    properties = new {
+        emails = "<emails>",
+        phone = "<phone>",
+        alertNotifications = new {
+            state = "On",
+            minimalSeverity = "High",
+        },
+        notificationsByRole = new {
+            state = "On",
+            roles = new[] {
+                "AccountAdmin"
+            },
+        },
+    },
+};
+
+Response response = client.Create("<securityContactName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("emails").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("phone").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertNotifications").GetProperty("state").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertNotifications").GetProperty("minimalSeverity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("notificationsByRole").GetProperty("state").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("notificationsByRole").GetProperty("roles")[0].ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="DeleteAsync(string,RequestContext)">
+<example>
+This sample shows how to call DeleteAsync with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecurityContactsClient("<subscriptionId>", credential);
+
+Response response = await client.DeleteAsync("<securityContactName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="Delete(string,RequestContext)">
+<example>
+This sample shows how to call Delete with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecurityContactsClient("<subscriptionId>", credential);
+
+Response response = client.Delete("<securityContactName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="GetSecurityContactsAsync(RequestContext)">
+<example>
+This sample shows how to call GetSecurityContactsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecurityContactsClient("<subscriptionId>", credential);
+
+await foreach (var item in client.GetSecurityContactsAsync(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("emails").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("phone").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertNotifications").GetProperty("state").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertNotifications").GetProperty("minimalSeverity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("notificationsByRole").GetProperty("state").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("notificationsByRole").GetProperty("roles")[0].ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetSecurityContacts(RequestContext)">
+<example>
+This sample shows how to call GetSecurityContacts with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecurityContactsClient("<subscriptionId>", credential);
+
+foreach (var item in client.GetSecurityContacts(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("emails").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("phone").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertNotifications").GetProperty("state").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertNotifications").GetProperty("minimalSeverity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("notificationsByRole").GetProperty("state").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("notificationsByRole").GetProperty("roles")[0].ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetAssessmentsMetadataAsync(string,RequestContext)">
+<example>
+This sample shows how to call GetAssessmentsMetadataAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AssessmentsMetadataClient("<subscriptionId>", credential);
+
+Response response = await client.GetAssessmentsMetadataAsync("<assessmentMetadataName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("publishDates").GetProperty("GA").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("publishDates").GetProperty("public").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("plannedDeprecationDate").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("tactics")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("techniques")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("policyDefinitionId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDescription").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("categories")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("userImpact").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("implementationEffort").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("threats")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("preview").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("partnerName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("productName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("secret").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetAssessmentsMetadata(string,RequestContext)">
+<example>
+This sample shows how to call GetAssessmentsMetadata with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AssessmentsMetadataClient("<subscriptionId>", credential);
+
+Response response = client.GetAssessmentsMetadata("<assessmentMetadataName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("publishDates").GetProperty("GA").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("publishDates").GetProperty("public").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("plannedDeprecationDate").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("tactics")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("techniques")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("policyDefinitionId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDescription").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("categories")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("userImpact").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("implementationEffort").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("threats")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("preview").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("partnerName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("productName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("secret").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetInSubscriptionAsync(string,RequestContext)">
+<example>
+This sample shows how to call GetInSubscriptionAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AssessmentsMetadataClient("<subscriptionId>", credential);
+
+Response response = await client.GetInSubscriptionAsync("<assessmentMetadataName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("publishDates").GetProperty("GA").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("publishDates").GetProperty("public").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("plannedDeprecationDate").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("tactics")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("techniques")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("policyDefinitionId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDescription").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("categories")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("userImpact").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("implementationEffort").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("threats")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("preview").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("partnerName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("productName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("secret").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetInSubscription(string,RequestContext)">
+<example>
+This sample shows how to call GetInSubscription with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AssessmentsMetadataClient("<subscriptionId>", credential);
+
+Response response = client.GetInSubscription("<assessmentMetadataName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("publishDates").GetProperty("GA").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("publishDates").GetProperty("public").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("plannedDeprecationDate").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("tactics")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("techniques")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("policyDefinitionId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDescription").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("categories")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("userImpact").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("implementationEffort").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("threats")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("preview").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("partnerName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("productName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("secret").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="CreateInSubscriptionAsync(string,RequestContent,RequestContext)">
+<example>
+This sample shows how to call CreateInSubscriptionAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AssessmentsMetadataClient("<subscriptionId>", credential);
+
+var data = new {};
+
+Response response = await client.CreateInSubscriptionAsync("<assessmentMetadataName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call CreateInSubscriptionAsync with all parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AssessmentsMetadataClient("<subscriptionId>", credential);
+
+var data = new {
+    properties = new {
+        publishDates = new {
+            GA = "<GA>",
+            @public = "<public>",
+        },
+        plannedDeprecationDate = "<plannedDeprecationDate>",
+        tactics = new[] {
+            "Reconnaissance"
+        },
+        techniques = new[] {
+            "Abuse Elevation Control Mechanism"
+        },
+        displayName = "<displayName>",
+        description = "<description>",
+        remediationDescription = "<remediationDescription>",
+        categories = new[] {
+            "Compute"
+        },
+        severity = "Low",
+        userImpact = "Low",
+        implementationEffort = "Low",
+        threats = new[] {
+            "accountBreach"
+        },
+        preview = true,
+        assessmentType = "BuiltIn",
+        partnerData = new {
+            partnerName = "<partnerName>",
+            productName = "<productName>",
+            secret = "<secret>",
+        },
+    },
+};
+
+Response response = await client.CreateInSubscriptionAsync("<assessmentMetadataName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("publishDates").GetProperty("GA").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("publishDates").GetProperty("public").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("plannedDeprecationDate").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("tactics")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("techniques")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("policyDefinitionId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDescription").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("categories")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("userImpact").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("implementationEffort").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("threats")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("preview").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("partnerName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("productName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("secret").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="CreateInSubscription(string,RequestContent,RequestContext)">
+<example>
+This sample shows how to call CreateInSubscription with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AssessmentsMetadataClient("<subscriptionId>", credential);
+
+var data = new {};
+
+Response response = client.CreateInSubscription("<assessmentMetadataName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call CreateInSubscription with all parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AssessmentsMetadataClient("<subscriptionId>", credential);
+
+var data = new {
+    properties = new {
+        publishDates = new {
+            GA = "<GA>",
+            @public = "<public>",
+        },
+        plannedDeprecationDate = "<plannedDeprecationDate>",
+        tactics = new[] {
+            "Reconnaissance"
+        },
+        techniques = new[] {
+            "Abuse Elevation Control Mechanism"
+        },
+        displayName = "<displayName>",
+        description = "<description>",
+        remediationDescription = "<remediationDescription>",
+        categories = new[] {
+            "Compute"
+        },
+        severity = "Low",
+        userImpact = "Low",
+        implementationEffort = "Low",
+        threats = new[] {
+            "accountBreach"
+        },
+        preview = true,
+        assessmentType = "BuiltIn",
+        partnerData = new {
+            partnerName = "<partnerName>",
+            productName = "<productName>",
+            secret = "<secret>",
+        },
+    },
+};
+
+Response response = client.CreateInSubscription("<assessmentMetadataName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("publishDates").GetProperty("GA").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("publishDates").GetProperty("public").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("plannedDeprecationDate").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("tactics")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("techniques")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("policyDefinitionId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDescription").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("categories")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("userImpact").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("implementationEffort").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("threats")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("preview").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("partnerName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("productName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("secret").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="DeleteInSubscriptionAsync(string,RequestContext)">
+<example>
+This sample shows how to call DeleteInSubscriptionAsync with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AssessmentsMetadataClient("<subscriptionId>", credential);
+
+Response response = await client.DeleteInSubscriptionAsync("<assessmentMetadataName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="DeleteInSubscription(string,RequestContext)">
+<example>
+This sample shows how to call DeleteInSubscription with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AssessmentsMetadataClient("<subscriptionId>", credential);
+
+Response response = client.DeleteInSubscription("<assessmentMetadataName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="GetAllAssessmentsMetadataAsync(RequestContext)">
+<example>
+This sample shows how to call GetAllAssessmentsMetadataAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AssessmentsMetadataClient("<subscriptionId>", credential);
+
+await foreach (var item in client.GetAllAssessmentsMetadataAsync(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("publishDates").GetProperty("GA").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("publishDates").GetProperty("public").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("plannedDeprecationDate").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("tactics")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("techniques")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("policyDefinitionId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDescription").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("categories")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("userImpact").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("implementationEffort").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("threats")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("preview").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("partnerName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("productName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("secret").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetAllAssessmentsMetadata(RequestContext)">
+<example>
+This sample shows how to call GetAllAssessmentsMetadata with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AssessmentsMetadataClient("<subscriptionId>", credential);
+
+foreach (var item in client.GetAllAssessmentsMetadata(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("publishDates").GetProperty("GA").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("publishDates").GetProperty("public").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("plannedDeprecationDate").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("tactics")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("techniques")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("policyDefinitionId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDescription").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("categories")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("userImpact").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("implementationEffort").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("threats")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("preview").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("partnerName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("productName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("secret").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetAllAssessmentsMetadataBySubscriptionAsync(RequestContext)">
+<example>
+This sample shows how to call GetAllAssessmentsMetadataBySubscriptionAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AssessmentsMetadataClient("<subscriptionId>", credential);
+
+await foreach (var item in client.GetAllAssessmentsMetadataBySubscriptionAsync(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("publishDates").GetProperty("GA").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("publishDates").GetProperty("public").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("plannedDeprecationDate").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("tactics")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("techniques")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("policyDefinitionId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDescription").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("categories")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("userImpact").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("implementationEffort").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("threats")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("preview").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("partnerName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("productName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("secret").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetAllAssessmentsMetadataBySubscription(RequestContext)">
+<example>
+This sample shows how to call GetAllAssessmentsMetadataBySubscription with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AssessmentsMetadataClient("<subscriptionId>", credential);
+
+foreach (var item in client.GetAllAssessmentsMetadataBySubscription(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("publishDates").GetProperty("GA").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("publishDates").GetProperty("public").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("plannedDeprecationDate").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("tactics")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("techniques")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("policyDefinitionId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDescription").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("categories")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("userImpact").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("implementationEffort").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("threats")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("preview").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("partnerName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("productName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("partnerData").GetProperty("secret").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

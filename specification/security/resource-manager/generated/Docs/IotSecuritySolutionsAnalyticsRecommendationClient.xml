@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetIotSecuritySolutionsAnalyticsRecommendationAsync(string,string,string,RequestContext)">
+<example>
+This sample shows how to call GetIotSecuritySolutionsAnalyticsRecommendationAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IotSecuritySolutionsAnalyticsRecommendationClient("<subscriptionId>", credential);
+
+Response response = await client.GetIotSecuritySolutionsAnalyticsRecommendationAsync("<resourceGroupName>", "<solutionName>", "<aggregatedRecommendationName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("recommendationName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("recommendationDisplayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("recommendationTypeId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("detectedBy").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationSteps").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("reportedSeverity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("healthyDevices").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("unhealthyDeviceCount").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("logAnalyticsQuery").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetIotSecuritySolutionsAnalyticsRecommendation(string,string,string,RequestContext)">
+<example>
+This sample shows how to call GetIotSecuritySolutionsAnalyticsRecommendation with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IotSecuritySolutionsAnalyticsRecommendationClient("<subscriptionId>", credential);
+
+Response response = client.GetIotSecuritySolutionsAnalyticsRecommendation("<resourceGroupName>", "<solutionName>", "<aggregatedRecommendationName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("recommendationName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("recommendationDisplayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("recommendationTypeId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("detectedBy").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationSteps").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("reportedSeverity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("healthyDevices").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("unhealthyDeviceCount").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("logAnalyticsQuery").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetIotSecuritySolutionsAnalyticsRecommendationsAsync(string,string,int?,RequestContext)">
+<example>
+This sample shows how to call GetIotSecuritySolutionsAnalyticsRecommendationsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IotSecuritySolutionsAnalyticsRecommendationClient("<subscriptionId>", credential);
+
+await foreach (var item in client.GetIotSecuritySolutionsAnalyticsRecommendationsAsync("<resourceGroupName>", "<solutionName>", 1234, new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("recommendationName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("recommendationDisplayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("recommendationTypeId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("detectedBy").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationSteps").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("reportedSeverity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("healthyDevices").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("unhealthyDeviceCount").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("logAnalyticsQuery").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetIotSecuritySolutionsAnalyticsRecommendations(string,string,int?,RequestContext)">
+<example>
+This sample shows how to call GetIotSecuritySolutionsAnalyticsRecommendations with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new IotSecuritySolutionsAnalyticsRecommendationClient("<subscriptionId>", credential);
+
+foreach (var item in client.GetIotSecuritySolutionsAnalyticsRecommendations("<resourceGroupName>", "<solutionName>", 1234, new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("recommendationName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("recommendationDisplayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("recommendationTypeId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("detectedBy").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationSteps").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("reportedSeverity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("healthyDevices").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("unhealthyDeviceCount").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("logAnalyticsQuery").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

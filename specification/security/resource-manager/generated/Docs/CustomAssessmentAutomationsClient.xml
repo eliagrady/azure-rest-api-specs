@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetCustomAssessmentAutomationAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call GetCustomAssessmentAutomationAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new CustomAssessmentAutomationsClient("<subscriptionId>", credential);
+
+Response response = await client.GetCustomAssessmentAutomationAsync("<resourceGroupName>", "<customAssessmentAutomationName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("systemData").GetProperty("createdBy").ToString());
+Console.WriteLine(result.GetProperty("systemData").GetProperty("createdByType").ToString());
+Console.WriteLine(result.GetProperty("systemData").GetProperty("createdAt").ToString());
+Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedBy").ToString());
+Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedByType").ToString());
+Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedAt").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("compressedQuery").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("supportedCloud").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDescription").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentKey").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetCustomAssessmentAutomation(string,string,RequestContext)">
+<example>
+This sample shows how to call GetCustomAssessmentAutomation with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new CustomAssessmentAutomationsClient("<subscriptionId>", credential);
+
+Response response = client.GetCustomAssessmentAutomation("<resourceGroupName>", "<customAssessmentAutomationName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("systemData").GetProperty("createdBy").ToString());
+Console.WriteLine(result.GetProperty("systemData").GetProperty("createdByType").ToString());
+Console.WriteLine(result.GetProperty("systemData").GetProperty("createdAt").ToString());
+Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedBy").ToString());
+Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedByType").ToString());
+Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedAt").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("compressedQuery").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("supportedCloud").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDescription").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentKey").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="CreateAsync(string,string,RequestContent,RequestContext)">
+<example>
+This sample shows how to call CreateAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new CustomAssessmentAutomationsClient("<subscriptionId>", credential);
+
+var data = new {};
+
+Response response = await client.CreateAsync("<resourceGroupName>", "<customAssessmentAutomationName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call CreateAsync with all parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new CustomAssessmentAutomationsClient("<subscriptionId>", credential);
+
+var data = new {
+    properties = new {
+        compressedQuery = "<compressedQuery>",
+        supportedCloud = "AWS",
+        severity = "High",
+        displayName = "<displayName>",
+        description = "<description>",
+        remediationDescription = "<remediationDescription>",
+    },
+};
+
+Response response = await client.CreateAsync("<resourceGroupName>", "<customAssessmentAutomationName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("systemData").GetProperty("createdBy").ToString());
+Console.WriteLine(result.GetProperty("systemData").GetProperty("createdByType").ToString());
+Console.WriteLine(result.GetProperty("systemData").GetProperty("createdAt").ToString());
+Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedBy").ToString());
+Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedByType").ToString());
+Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedAt").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("compressedQuery").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("supportedCloud").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDescription").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentKey").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="Create(string,string,RequestContent,RequestContext)">
+<example>
+This sample shows how to call Create with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new CustomAssessmentAutomationsClient("<subscriptionId>", credential);
+
+var data = new {};
+
+Response response = client.Create("<resourceGroupName>", "<customAssessmentAutomationName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call Create with all parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new CustomAssessmentAutomationsClient("<subscriptionId>", credential);
+
+var data = new {
+    properties = new {
+        compressedQuery = "<compressedQuery>",
+        supportedCloud = "AWS",
+        severity = "High",
+        displayName = "<displayName>",
+        description = "<description>",
+        remediationDescription = "<remediationDescription>",
+    },
+};
+
+Response response = client.Create("<resourceGroupName>", "<customAssessmentAutomationName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("systemData").GetProperty("createdBy").ToString());
+Console.WriteLine(result.GetProperty("systemData").GetProperty("createdByType").ToString());
+Console.WriteLine(result.GetProperty("systemData").GetProperty("createdAt").ToString());
+Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedBy").ToString());
+Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedByType").ToString());
+Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedAt").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("compressedQuery").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("supportedCloud").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDescription").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentKey").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="DeleteAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call DeleteAsync with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new CustomAssessmentAutomationsClient("<subscriptionId>", credential);
+
+Response response = await client.DeleteAsync("<resourceGroupName>", "<customAssessmentAutomationName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="Delete(string,string,RequestContext)">
+<example>
+This sample shows how to call Delete with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new CustomAssessmentAutomationsClient("<subscriptionId>", credential);
+
+Response response = client.Delete("<resourceGroupName>", "<customAssessmentAutomationName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="GetCustomAssessmentAutomationsByResourceGroupAsync(string,RequestContext)">
+<example>
+This sample shows how to call GetCustomAssessmentAutomationsByResourceGroupAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new CustomAssessmentAutomationsClient("<subscriptionId>", credential);
+
+await foreach (var item in client.GetCustomAssessmentAutomationsByResourceGroupAsync("<resourceGroupName>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("createdBy").ToString());
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("createdByType").ToString());
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("createdAt").ToString());
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedBy").ToString());
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedByType").ToString());
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedAt").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("compressedQuery").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("supportedCloud").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDescription").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentKey").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetCustomAssessmentAutomationsByResourceGroup(string,RequestContext)">
+<example>
+This sample shows how to call GetCustomAssessmentAutomationsByResourceGroup with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new CustomAssessmentAutomationsClient("<subscriptionId>", credential);
+
+foreach (var item in client.GetCustomAssessmentAutomationsByResourceGroup("<resourceGroupName>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("createdBy").ToString());
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("createdByType").ToString());
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("createdAt").ToString());
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedBy").ToString());
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedByType").ToString());
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedAt").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("compressedQuery").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("supportedCloud").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDescription").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentKey").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetCustomAssessmentAutomationsBySubscriptionAsync(RequestContext)">
+<example>
+This sample shows how to call GetCustomAssessmentAutomationsBySubscriptionAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new CustomAssessmentAutomationsClient("<subscriptionId>", credential);
+
+await foreach (var item in client.GetCustomAssessmentAutomationsBySubscriptionAsync(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("createdBy").ToString());
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("createdByType").ToString());
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("createdAt").ToString());
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedBy").ToString());
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedByType").ToString());
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedAt").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("compressedQuery").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("supportedCloud").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDescription").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentKey").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetCustomAssessmentAutomationsBySubscription(RequestContext)">
+<example>
+This sample shows how to call GetCustomAssessmentAutomationsBySubscription with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new CustomAssessmentAutomationsClient("<subscriptionId>", credential);
+
+foreach (var item in client.GetCustomAssessmentAutomationsBySubscription(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("createdBy").ToString());
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("createdByType").ToString());
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("createdAt").ToString());
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedBy").ToString());
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedByType").ToString());
+    Console.WriteLine(result.GetProperty("systemData").GetProperty("lastModifiedAt").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("compressedQuery").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("supportedCloud").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationDescription").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("assessmentKey").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetAdaptiveApplicationControlsAsync(bool?,bool?,RequestContext)">
+<example>
+This sample shows how to call GetAdaptiveApplicationControlsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AdaptiveApplicationControlsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.GetAdaptiveApplicationControlsAsync(true, true, new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("enforcementMode").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("protectionMode").GetProperty("exe").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("protectionMode").GetProperty("msi").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("protectionMode").GetProperty("script").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("protectionMode").GetProperty("executable").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("configurationStatus").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("recommendationStatus").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("issues")[0].GetProperty("issue").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("issues")[0].GetProperty("numberOfVms").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("sourceSystem").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("configurationStatus").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("recommendationAction").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("resourceId").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("enforcementSupport").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("path").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("action").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("publisherName").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("productName").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("binaryName").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("version").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("common").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("userSids")[0].ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("usernames")[0].GetProperty("username").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("usernames")[0].GetProperty("recommendationAction").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("fileType").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("configurationStatus").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetAdaptiveApplicationControls(bool?,bool?,RequestContext)">
+<example>
+This sample shows how to call GetAdaptiveApplicationControls with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AdaptiveApplicationControlsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.GetAdaptiveApplicationControls(true, true, new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("enforcementMode").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("protectionMode").GetProperty("exe").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("protectionMode").GetProperty("msi").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("protectionMode").GetProperty("script").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("protectionMode").GetProperty("executable").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("configurationStatus").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("recommendationStatus").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("issues")[0].GetProperty("issue").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("issues")[0].GetProperty("numberOfVms").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("sourceSystem").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("configurationStatus").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("recommendationAction").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("resourceId").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("enforcementSupport").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("path").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("action").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("publisherName").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("productName").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("binaryName").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("version").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("common").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("userSids")[0].ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("usernames")[0].GetProperty("username").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("usernames")[0].GetProperty("recommendationAction").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("fileType").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("configurationStatus").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("value")[0].GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetAdaptiveApplicationControlAsync(string,RequestContext)">
+<example>
+This sample shows how to call GetAdaptiveApplicationControlAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AdaptiveApplicationControlsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.GetAdaptiveApplicationControlAsync("<groupName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("enforcementMode").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("protectionMode").GetProperty("exe").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("protectionMode").GetProperty("msi").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("protectionMode").GetProperty("script").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("protectionMode").GetProperty("executable").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("configurationStatus").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("recommendationStatus").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("issue").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("numberOfVms").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("sourceSystem").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("configurationStatus").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("recommendationAction").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("resourceId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("enforcementSupport").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("path").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("action").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("publisherName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("productName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("binaryName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("version").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("common").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("userSids")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("usernames")[0].GetProperty("username").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("usernames")[0].GetProperty("recommendationAction").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("fileType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("configurationStatus").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetAdaptiveApplicationControl(string,RequestContext)">
+<example>
+This sample shows how to call GetAdaptiveApplicationControl with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AdaptiveApplicationControlsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.GetAdaptiveApplicationControl("<groupName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("enforcementMode").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("protectionMode").GetProperty("exe").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("protectionMode").GetProperty("msi").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("protectionMode").GetProperty("script").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("protectionMode").GetProperty("executable").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("configurationStatus").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("recommendationStatus").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("issue").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("numberOfVms").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("sourceSystem").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("configurationStatus").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("recommendationAction").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("resourceId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("enforcementSupport").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("path").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("action").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("publisherName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("productName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("binaryName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("version").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("common").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("userSids")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("usernames")[0].GetProperty("username").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("usernames")[0].GetProperty("recommendationAction").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("fileType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("configurationStatus").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="PutAsync(string,RequestContent,RequestContext)">
+<example>
+This sample shows how to call PutAsync with required parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AdaptiveApplicationControlsClient("<subscriptionId>", "<ascLocation>", credential);
+
+var data = new {
+    properties = new {},
+};
+
+Response response = await client.PutAsync("<groupName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").ToString());
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call PutAsync with all parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AdaptiveApplicationControlsClient("<subscriptionId>", "<ascLocation>", credential);
+
+var data = new {
+    properties = new {
+        enforcementMode = "Audit",
+        protectionMode = new {
+            exe = "Audit",
+            msi = "Audit",
+            script = "Audit",
+            executable = "Audit",
+        },
+        vmRecommendations = new[] {
+            new {
+                configurationStatus = "Configured",
+                recommendationAction = "Recommended",
+                resourceId = "<resourceId>",
+                enforcementSupport = "Supported",
+            }
+        },
+        pathRecommendations = new[] {
+            new {
+                path = "<path>",
+                action = "Recommended",
+                type = "IoT_ACRAuthentication",
+                publisherInfo = new {
+                    publisherName = "<publisherName>",
+                    productName = "<productName>",
+                    binaryName = "<binaryName>",
+                    version = "<version>",
+                },
+                common = true,
+                userSids = new[] {
+                    "<String>"
+                },
+                usernames = new[] {
+                    new {
+                        username = "<username>",
+                        recommendationAction = "Recommended",
+                    }
+                },
+                fileType = "Exe",
+                configurationStatus = "Configured",
+            }
+        },
+    },
+};
+
+Response response = await client.PutAsync("<groupName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("enforcementMode").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("protectionMode").GetProperty("exe").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("protectionMode").GetProperty("msi").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("protectionMode").GetProperty("script").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("protectionMode").GetProperty("executable").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("configurationStatus").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("recommendationStatus").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("issue").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("numberOfVms").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("sourceSystem").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("configurationStatus").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("recommendationAction").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("resourceId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("enforcementSupport").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("path").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("action").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("publisherName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("productName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("binaryName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("version").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("common").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("userSids")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("usernames")[0].GetProperty("username").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("usernames")[0].GetProperty("recommendationAction").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("fileType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("configurationStatus").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="Put(string,RequestContent,RequestContext)">
+<example>
+This sample shows how to call Put with required parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AdaptiveApplicationControlsClient("<subscriptionId>", "<ascLocation>", credential);
+
+var data = new {
+    properties = new {},
+};
+
+Response response = client.Put("<groupName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").ToString());
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call Put with all parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AdaptiveApplicationControlsClient("<subscriptionId>", "<ascLocation>", credential);
+
+var data = new {
+    properties = new {
+        enforcementMode = "Audit",
+        protectionMode = new {
+            exe = "Audit",
+            msi = "Audit",
+            script = "Audit",
+            executable = "Audit",
+        },
+        vmRecommendations = new[] {
+            new {
+                configurationStatus = "Configured",
+                recommendationAction = "Recommended",
+                resourceId = "<resourceId>",
+                enforcementSupport = "Supported",
+            }
+        },
+        pathRecommendations = new[] {
+            new {
+                path = "<path>",
+                action = "Recommended",
+                type = "IoT_ACRAuthentication",
+                publisherInfo = new {
+                    publisherName = "<publisherName>",
+                    productName = "<productName>",
+                    binaryName = "<binaryName>",
+                    version = "<version>",
+                },
+                common = true,
+                userSids = new[] {
+                    "<String>"
+                },
+                usernames = new[] {
+                    new {
+                        username = "<username>",
+                        recommendationAction = "Recommended",
+                    }
+                },
+                fileType = "Exe",
+                configurationStatus = "Configured",
+            }
+        },
+    },
+};
+
+Response response = client.Put("<groupName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("enforcementMode").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("protectionMode").GetProperty("exe").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("protectionMode").GetProperty("msi").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("protectionMode").GetProperty("script").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("protectionMode").GetProperty("executable").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("configurationStatus").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("recommendationStatus").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("issue").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("issues")[0].GetProperty("numberOfVms").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("sourceSystem").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("configurationStatus").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("recommendationAction").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("resourceId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vmRecommendations")[0].GetProperty("enforcementSupport").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("path").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("action").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("publisherName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("productName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("binaryName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("publisherInfo").GetProperty("version").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("common").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("userSids")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("usernames")[0].GetProperty("username").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("usernames")[0].GetProperty("recommendationAction").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("fileType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("pathRecommendations")[0].GetProperty("configurationStatus").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="DeleteAsync(string,RequestContext)">
+<example>
+This sample shows how to call DeleteAsync with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AdaptiveApplicationControlsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.DeleteAsync("<groupName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="Delete(string,RequestContext)">
+<example>
+This sample shows how to call Delete with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AdaptiveApplicationControlsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.Delete("<groupName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

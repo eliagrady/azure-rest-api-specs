@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetSubscriptionLevelAsync(string,RequestContext)">
+<example>
+This sample shows how to call GetSubscriptionLevelAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.GetSubscriptionLevelAsync("<alertName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("version").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("systemAlertId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("productComponentName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertDisplayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("intent").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("startTimeUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("endTimeUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("resourceIdentifiers")[0].GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationSteps")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vendorName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("status").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extendedLinks")[0].GetProperty("<test>").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertUri").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("timeGeneratedUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("productName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("processingEndTimeUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("entities")[0].GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("isIncident").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("correlationKey").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extendedProperties").GetProperty("<test>").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("compromisedEntity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("techniques")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("subTechniques")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("supportingEvidence").GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetSubscriptionLevel(string,RequestContext)">
+<example>
+This sample shows how to call GetSubscriptionLevel with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.GetSubscriptionLevel("<alertName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("version").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("systemAlertId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("productComponentName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertDisplayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("intent").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("startTimeUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("endTimeUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("resourceIdentifiers")[0].GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationSteps")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vendorName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("status").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extendedLinks")[0].GetProperty("<test>").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertUri").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("timeGeneratedUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("productName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("processingEndTimeUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("entities")[0].GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("isIncident").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("correlationKey").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extendedProperties").GetProperty("<test>").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("compromisedEntity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("techniques")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("subTechniques")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("supportingEvidence").GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetResourceGroupLevelAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call GetResourceGroupLevelAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.GetResourceGroupLevelAsync("<resourceGroupName>", "<alertName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("version").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("systemAlertId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("productComponentName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertDisplayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("intent").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("startTimeUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("endTimeUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("resourceIdentifiers")[0].GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationSteps")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vendorName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("status").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extendedLinks")[0].GetProperty("<test>").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertUri").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("timeGeneratedUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("productName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("processingEndTimeUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("entities")[0].GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("isIncident").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("correlationKey").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extendedProperties").GetProperty("<test>").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("compromisedEntity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("techniques")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("subTechniques")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("supportingEvidence").GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetResourceGroupLevel(string,string,RequestContext)">
+<example>
+This sample shows how to call GetResourceGroupLevel with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.GetResourceGroupLevel("<resourceGroupName>", "<alertName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("version").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertType").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("systemAlertId").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("productComponentName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertDisplayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("intent").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("startTimeUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("endTimeUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("resourceIdentifiers")[0].GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("remediationSteps")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("vendorName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("status").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extendedLinks")[0].GetProperty("<test>").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("alertUri").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("timeGeneratedUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("productName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("processingEndTimeUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("entities")[0].GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("isIncident").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("correlationKey").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("extendedProperties").GetProperty("<test>").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("compromisedEntity").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("techniques")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("subTechniques")[0].ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("supportingEvidence").GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="UpdateSubscriptionLevelStateToDismissAsync(string,RequestContext)">
+<example>
+This sample shows how to call UpdateSubscriptionLevelStateToDismissAsync with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.UpdateSubscriptionLevelStateToDismissAsync("<alertName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="UpdateSubscriptionLevelStateToDismiss(string,RequestContext)">
+<example>
+This sample shows how to call UpdateSubscriptionLevelStateToDismiss with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.UpdateSubscriptionLevelStateToDismiss("<alertName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="UpdateSubscriptionLevelStateToResolveAsync(string,RequestContext)">
+<example>
+This sample shows how to call UpdateSubscriptionLevelStateToResolveAsync with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.UpdateSubscriptionLevelStateToResolveAsync("<alertName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="UpdateSubscriptionLevelStateToResolve(string,RequestContext)">
+<example>
+This sample shows how to call UpdateSubscriptionLevelStateToResolve with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.UpdateSubscriptionLevelStateToResolve("<alertName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="UpdateSubscriptionLevelStateToActivateAsync(string,RequestContext)">
+<example>
+This sample shows how to call UpdateSubscriptionLevelStateToActivateAsync with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.UpdateSubscriptionLevelStateToActivateAsync("<alertName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="UpdateSubscriptionLevelStateToActivate(string,RequestContext)">
+<example>
+This sample shows how to call UpdateSubscriptionLevelStateToActivate with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.UpdateSubscriptionLevelStateToActivate("<alertName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="UpdateSubscriptionLevelStateToInProgressAsync(string,RequestContext)">
+<example>
+This sample shows how to call UpdateSubscriptionLevelStateToInProgressAsync with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.UpdateSubscriptionLevelStateToInProgressAsync("<alertName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="UpdateSubscriptionLevelStateToInProgress(string,RequestContext)">
+<example>
+This sample shows how to call UpdateSubscriptionLevelStateToInProgress with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.UpdateSubscriptionLevelStateToInProgress("<alertName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="UpdateResourceGroupLevelStateToResolveAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call UpdateResourceGroupLevelStateToResolveAsync with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.UpdateResourceGroupLevelStateToResolveAsync("<resourceGroupName>", "<alertName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="UpdateResourceGroupLevelStateToResolve(string,string,RequestContext)">
+<example>
+This sample shows how to call UpdateResourceGroupLevelStateToResolve with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.UpdateResourceGroupLevelStateToResolve("<resourceGroupName>", "<alertName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="UpdateResourceGroupLevelStateToDismissAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call UpdateResourceGroupLevelStateToDismissAsync with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.UpdateResourceGroupLevelStateToDismissAsync("<resourceGroupName>", "<alertName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="UpdateResourceGroupLevelStateToDismiss(string,string,RequestContext)">
+<example>
+This sample shows how to call UpdateResourceGroupLevelStateToDismiss with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.UpdateResourceGroupLevelStateToDismiss("<resourceGroupName>", "<alertName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="UpdateResourceGroupLevelStateToActivateAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call UpdateResourceGroupLevelStateToActivateAsync with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.UpdateResourceGroupLevelStateToActivateAsync("<resourceGroupName>", "<alertName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="UpdateResourceGroupLevelStateToActivate(string,string,RequestContext)">
+<example>
+This sample shows how to call UpdateResourceGroupLevelStateToActivate with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.UpdateResourceGroupLevelStateToActivate("<resourceGroupName>", "<alertName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="UpdateResourceGroupLevelStateToInProgressAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call UpdateResourceGroupLevelStateToInProgressAsync with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.UpdateResourceGroupLevelStateToInProgressAsync("<resourceGroupName>", "<alertName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="UpdateResourceGroupLevelStateToInProgress(string,string,RequestContext)">
+<example>
+This sample shows how to call UpdateResourceGroupLevelStateToInProgress with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.UpdateResourceGroupLevelStateToInProgress("<resourceGroupName>", "<alertName>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="GetAlertsAsync(RequestContext)">
+<example>
+This sample shows how to call GetAlertsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+await foreach (var item in client.GetAlertsAsync(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("version").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("systemAlertId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("productComponentName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertDisplayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("intent").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("startTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("endTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("resourceIdentifiers")[0].GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationSteps")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("vendorName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("status").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("extendedLinks")[0].GetProperty("<test>").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertUri").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("timeGeneratedUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("productName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("processingEndTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("entities")[0].GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("isIncident").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("correlationKey").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("extendedProperties").GetProperty("<test>").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("compromisedEntity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("techniques")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("subTechniques")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("supportingEvidence").GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetAlerts(RequestContext)">
+<example>
+This sample shows how to call GetAlerts with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+foreach (var item in client.GetAlerts(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("version").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("systemAlertId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("productComponentName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertDisplayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("intent").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("startTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("endTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("resourceIdentifiers")[0].GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationSteps")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("vendorName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("status").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("extendedLinks")[0].GetProperty("<test>").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertUri").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("timeGeneratedUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("productName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("processingEndTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("entities")[0].GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("isIncident").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("correlationKey").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("extendedProperties").GetProperty("<test>").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("compromisedEntity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("techniques")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("subTechniques")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("supportingEvidence").GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetAlertsByResourceGroupAsync(string,RequestContext)">
+<example>
+This sample shows how to call GetAlertsByResourceGroupAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+await foreach (var item in client.GetAlertsByResourceGroupAsync("<resourceGroupName>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("version").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("systemAlertId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("productComponentName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertDisplayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("intent").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("startTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("endTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("resourceIdentifiers")[0].GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationSteps")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("vendorName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("status").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("extendedLinks")[0].GetProperty("<test>").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertUri").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("timeGeneratedUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("productName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("processingEndTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("entities")[0].GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("isIncident").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("correlationKey").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("extendedProperties").GetProperty("<test>").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("compromisedEntity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("techniques")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("subTechniques")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("supportingEvidence").GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetAlertsByResourceGroup(string,RequestContext)">
+<example>
+This sample shows how to call GetAlertsByResourceGroup with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+foreach (var item in client.GetAlertsByResourceGroup("<resourceGroupName>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("version").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("systemAlertId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("productComponentName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertDisplayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("intent").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("startTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("endTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("resourceIdentifiers")[0].GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationSteps")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("vendorName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("status").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("extendedLinks")[0].GetProperty("<test>").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertUri").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("timeGeneratedUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("productName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("processingEndTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("entities")[0].GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("isIncident").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("correlationKey").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("extendedProperties").GetProperty("<test>").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("compromisedEntity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("techniques")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("subTechniques")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("supportingEvidence").GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetSubscriptionLevelByRegionAsync(RequestContext)">
+<example>
+This sample shows how to call GetSubscriptionLevelByRegionAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+await foreach (var item in client.GetSubscriptionLevelByRegionAsync(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("version").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("systemAlertId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("productComponentName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertDisplayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("intent").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("startTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("endTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("resourceIdentifiers")[0].GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationSteps")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("vendorName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("status").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("extendedLinks")[0].GetProperty("<test>").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertUri").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("timeGeneratedUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("productName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("processingEndTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("entities")[0].GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("isIncident").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("correlationKey").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("extendedProperties").GetProperty("<test>").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("compromisedEntity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("techniques")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("subTechniques")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("supportingEvidence").GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetSubscriptionLevelByRegion(RequestContext)">
+<example>
+This sample shows how to call GetSubscriptionLevelByRegion with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+foreach (var item in client.GetSubscriptionLevelByRegion(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("version").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("systemAlertId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("productComponentName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertDisplayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("intent").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("startTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("endTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("resourceIdentifiers")[0].GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationSteps")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("vendorName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("status").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("extendedLinks")[0].GetProperty("<test>").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertUri").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("timeGeneratedUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("productName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("processingEndTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("entities")[0].GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("isIncident").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("correlationKey").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("extendedProperties").GetProperty("<test>").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("compromisedEntity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("techniques")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("subTechniques")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("supportingEvidence").GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetResourceGroupLevelByRegionAsync(string,RequestContext)">
+<example>
+This sample shows how to call GetResourceGroupLevelByRegionAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+await foreach (var item in client.GetResourceGroupLevelByRegionAsync("<resourceGroupName>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("version").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("systemAlertId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("productComponentName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertDisplayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("intent").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("startTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("endTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("resourceIdentifiers")[0].GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationSteps")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("vendorName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("status").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("extendedLinks")[0].GetProperty("<test>").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertUri").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("timeGeneratedUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("productName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("processingEndTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("entities")[0].GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("isIncident").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("correlationKey").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("extendedProperties").GetProperty("<test>").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("compromisedEntity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("techniques")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("subTechniques")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("supportingEvidence").GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetResourceGroupLevelByRegion(string,RequestContext)">
+<example>
+This sample shows how to call GetResourceGroupLevelByRegion with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+foreach (var item in client.GetResourceGroupLevelByRegion("<resourceGroupName>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("version").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertType").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("systemAlertId").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("productComponentName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertDisplayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("description").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("severity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("intent").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("startTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("endTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("resourceIdentifiers")[0].GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("remediationSteps")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("vendorName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("status").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("extendedLinks")[0].GetProperty("<test>").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("alertUri").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("timeGeneratedUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("productName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("processingEndTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("entities")[0].GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("isIncident").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("correlationKey").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("extendedProperties").GetProperty("<test>").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("compromisedEntity").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("techniques")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("subTechniques")[0].ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("supportingEvidence").GetProperty("type").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="SimulateAsync(WaitUntil,RequestContent,RequestContext)">
+<example>
+This sample shows how to call SimulateAsync with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+var data = new {};
+
+var operation = await client.SimulateAsync(WaitUntil.Completed, RequestContent.Create(data));
+
+Console.WriteLine(operation.GetRawResponse().Status);
+]]></code>
+This sample shows how to call SimulateAsync with all parameters and request content.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+var data = new {
+    properties = new {
+        bundles = new[] {
+            "AppServices"
+        },
+        kind = "Bundles",
+    },
+};
+
+var operation = await client.SimulateAsync(WaitUntil.Completed, RequestContent.Create(data));
+
+Console.WriteLine(operation.GetRawResponse().Status);
+]]></code>
+</example>
+    </member>
+    <member name="Simulate(WaitUntil,RequestContent,RequestContext)">
+<example>
+This sample shows how to call Simulate with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+var data = new {};
+
+var operation = client.Simulate(WaitUntil.Completed, RequestContent.Create(data));
+
+Console.WriteLine(operation.GetRawResponse().Status);
+]]></code>
+This sample shows how to call Simulate with all parameters and request content.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new AlertsClient("<subscriptionId>", "<ascLocation>", credential);
+
+var data = new {
+    properties = new {
+        bundles = new[] {
+            "AppServices"
+        },
+        kind = "Bundles",
+    },
+};
+
+var operation = client.Simulate(WaitUntil.Completed, RequestContent.Create(data));
+
+Console.WriteLine(operation.GetRawResponse().Status);
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

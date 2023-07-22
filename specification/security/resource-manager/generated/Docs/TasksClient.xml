@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetSubscriptionLevelTaskAsync(string,RequestContext)">
+<example>
+This sample shows how to call GetSubscriptionLevelTaskAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new TasksClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.GetSubscriptionLevelTaskAsync("<taskName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("creationTimeUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("securityTaskParameters").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("lastStateChangeTimeUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("subState").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetSubscriptionLevelTask(string,RequestContext)">
+<example>
+This sample shows how to call GetSubscriptionLevelTask with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new TasksClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.GetSubscriptionLevelTask("<taskName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("creationTimeUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("securityTaskParameters").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("lastStateChangeTimeUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("subState").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="UpdateSubscriptionLevelTaskStateAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call UpdateSubscriptionLevelTaskStateAsync with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new TasksClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.UpdateSubscriptionLevelTaskStateAsync("<taskName>", "<taskUpdateActionType>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="UpdateSubscriptionLevelTaskState(string,string,RequestContext)">
+<example>
+This sample shows how to call UpdateSubscriptionLevelTaskState with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new TasksClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.UpdateSubscriptionLevelTaskState("<taskName>", "<taskUpdateActionType>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="GetResourceGroupLevelTaskAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call GetResourceGroupLevelTaskAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new TasksClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.GetResourceGroupLevelTaskAsync("<resourceGroupName>", "<taskName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("creationTimeUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("securityTaskParameters").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("lastStateChangeTimeUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("subState").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetResourceGroupLevelTask(string,string,RequestContext)">
+<example>
+This sample shows how to call GetResourceGroupLevelTask with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new TasksClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.GetResourceGroupLevelTask("<resourceGroupName>", "<taskName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("creationTimeUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("securityTaskParameters").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("lastStateChangeTimeUtc").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("subState").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="UpdateResourceGroupLevelTaskStateAsync(string,string,string,RequestContext)">
+<example>
+This sample shows how to call UpdateResourceGroupLevelTaskStateAsync with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new TasksClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.UpdateResourceGroupLevelTaskStateAsync("<resourceGroupName>", "<taskName>", "<taskUpdateActionType>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="UpdateResourceGroupLevelTaskState(string,string,string,RequestContext)">
+<example>
+This sample shows how to call UpdateResourceGroupLevelTaskState with required parameters.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new TasksClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.UpdateResourceGroupLevelTaskState("<resourceGroupName>", "<taskName>", "<taskUpdateActionType>");
+Console.WriteLine(response.Status);
+]]></code>
+</example>
+    </member>
+    <member name="GetTasksAsync(string,RequestContext)">
+<example>
+This sample shows how to call GetTasksAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new TasksClient("<subscriptionId>", "<ascLocation>", credential);
+
+await foreach (var item in client.GetTasksAsync("<filter>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("creationTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("securityTaskParameters").GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("lastStateChangeTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("subState").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetTasks(string,RequestContext)">
+<example>
+This sample shows how to call GetTasks with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new TasksClient("<subscriptionId>", "<ascLocation>", credential);
+
+foreach (var item in client.GetTasks("<filter>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("creationTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("securityTaskParameters").GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("lastStateChangeTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("subState").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetTasksByHomeRegionAsync(string,RequestContext)">
+<example>
+This sample shows how to call GetTasksByHomeRegionAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new TasksClient("<subscriptionId>", "<ascLocation>", credential);
+
+await foreach (var item in client.GetTasksByHomeRegionAsync("<filter>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("creationTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("securityTaskParameters").GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("lastStateChangeTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("subState").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetTasksByHomeRegion(string,RequestContext)">
+<example>
+This sample shows how to call GetTasksByHomeRegion with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new TasksClient("<subscriptionId>", "<ascLocation>", credential);
+
+foreach (var item in client.GetTasksByHomeRegion("<filter>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("creationTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("securityTaskParameters").GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("lastStateChangeTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("subState").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetTasksByResourceGroupAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call GetTasksByResourceGroupAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new TasksClient("<subscriptionId>", "<ascLocation>", credential);
+
+await foreach (var item in client.GetTasksByResourceGroupAsync("<resourceGroupName>", "<filter>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("creationTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("securityTaskParameters").GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("lastStateChangeTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("subState").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetTasksByResourceGroup(string,string,RequestContext)">
+<example>
+This sample shows how to call GetTasksByResourceGroup with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new TasksClient("<subscriptionId>", "<ascLocation>", credential);
+
+foreach (var item in client.GetTasksByResourceGroup("<resourceGroupName>", "<filter>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("state").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("creationTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("securityTaskParameters").GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("lastStateChangeTimeUtc").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("subState").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

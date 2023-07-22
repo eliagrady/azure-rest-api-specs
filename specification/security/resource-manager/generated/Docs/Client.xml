@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetOperationsAsync(RequestContext)">
+<example>
+This sample shows how to call GetOperationsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new Client(credential);
+
+await foreach (var item in client.GetOperationsAsync(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("origin").ToString());
+    Console.WriteLine(result.GetProperty("display").GetProperty("provider").ToString());
+    Console.WriteLine(result.GetProperty("display").GetProperty("resource").ToString());
+    Console.WriteLine(result.GetProperty("display").GetProperty("operation").ToString());
+    Console.WriteLine(result.GetProperty("display").GetProperty("description").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetOperations(RequestContext)">
+<example>
+This sample shows how to call GetOperations with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new Client(credential);
+
+foreach (var item in client.GetOperations(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("origin").ToString());
+    Console.WriteLine(result.GetProperty("display").GetProperty("provider").ToString());
+    Console.WriteLine(result.GetProperty("display").GetProperty("resource").ToString());
+    Console.WriteLine(result.GetProperty("display").GetProperty("operation").ToString());
+    Console.WriteLine(result.GetProperty("display").GetProperty("description").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

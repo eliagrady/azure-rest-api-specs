@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetDefenderForStorageAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call GetDefenderForStorageAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new DefenderForStorageClient(credential);
+
+Response response = await client.GetDefenderForStorageAsync("<resourceId>", "<settingName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("isEnabled").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("malwareScanning").GetProperty("onUpload").GetProperty("isEnabled").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("malwareScanning").GetProperty("onUpload").GetProperty("capGBPerMonth").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("malwareScanning").GetProperty("operationStatus").GetProperty("code").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("malwareScanning").GetProperty("operationStatus").GetProperty("message").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("sensitiveDataDiscovery").GetProperty("isEnabled").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("sensitiveDataDiscovery").GetProperty("operationStatus").GetProperty("code").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("sensitiveDataDiscovery").GetProperty("operationStatus").GetProperty("message").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("overrideSubscriptionLevelSettings").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetDefenderForStorage(string,string,RequestContext)">
+<example>
+This sample shows how to call GetDefenderForStorage with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new DefenderForStorageClient(credential);
+
+Response response = client.GetDefenderForStorage("<resourceId>", "<settingName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("isEnabled").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("malwareScanning").GetProperty("onUpload").GetProperty("isEnabled").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("malwareScanning").GetProperty("onUpload").GetProperty("capGBPerMonth").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("malwareScanning").GetProperty("operationStatus").GetProperty("code").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("malwareScanning").GetProperty("operationStatus").GetProperty("message").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("sensitiveDataDiscovery").GetProperty("isEnabled").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("sensitiveDataDiscovery").GetProperty("operationStatus").GetProperty("code").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("sensitiveDataDiscovery").GetProperty("operationStatus").GetProperty("message").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("overrideSubscriptionLevelSettings").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="CreateAsync(string,string,RequestContent,RequestContext)">
+<example>
+This sample shows how to call CreateAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new DefenderForStorageClient(credential);
+
+var data = new {};
+
+Response response = await client.CreateAsync("<resourceId>", "<settingName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call CreateAsync with all parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new DefenderForStorageClient(credential);
+
+var data = new {
+    properties = new {
+        isEnabled = true,
+        malwareScanning = new {
+            onUpload = new {
+                isEnabled = true,
+                capGBPerMonth = 1234,
+            },
+        },
+        sensitiveDataDiscovery = new {
+            isEnabled = true,
+        },
+        overrideSubscriptionLevelSettings = true,
+    },
+};
+
+Response response = await client.CreateAsync("<resourceId>", "<settingName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("isEnabled").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("malwareScanning").GetProperty("onUpload").GetProperty("isEnabled").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("malwareScanning").GetProperty("onUpload").GetProperty("capGBPerMonth").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("malwareScanning").GetProperty("operationStatus").GetProperty("code").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("malwareScanning").GetProperty("operationStatus").GetProperty("message").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("sensitiveDataDiscovery").GetProperty("isEnabled").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("sensitiveDataDiscovery").GetProperty("operationStatus").GetProperty("code").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("sensitiveDataDiscovery").GetProperty("operationStatus").GetProperty("message").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("overrideSubscriptionLevelSettings").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="Create(string,string,RequestContent,RequestContext)">
+<example>
+This sample shows how to call Create with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new DefenderForStorageClient(credential);
+
+var data = new {};
+
+Response response = client.Create("<resourceId>", "<settingName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call Create with all parameters and request content, and how to parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new DefenderForStorageClient(credential);
+
+var data = new {
+    properties = new {
+        isEnabled = true,
+        malwareScanning = new {
+            onUpload = new {
+                isEnabled = true,
+                capGBPerMonth = 1234,
+            },
+        },
+        sensitiveDataDiscovery = new {
+            isEnabled = true,
+        },
+        overrideSubscriptionLevelSettings = true,
+    },
+};
+
+Response response = client.Create("<resourceId>", "<settingName>", RequestContent.Create(data));
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("isEnabled").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("malwareScanning").GetProperty("onUpload").GetProperty("isEnabled").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("malwareScanning").GetProperty("onUpload").GetProperty("capGBPerMonth").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("malwareScanning").GetProperty("operationStatus").GetProperty("code").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("malwareScanning").GetProperty("operationStatus").GetProperty("message").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("sensitiveDataDiscovery").GetProperty("isEnabled").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("sensitiveDataDiscovery").GetProperty("operationStatus").GetProperty("code").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("sensitiveDataDiscovery").GetProperty("operationStatus").GetProperty("message").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("overrideSubscriptionLevelSettings").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

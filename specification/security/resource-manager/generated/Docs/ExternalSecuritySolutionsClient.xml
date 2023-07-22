@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetExternalSecuritySolutionAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call GetExternalSecuritySolutionAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new ExternalSecuritySolutionsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.GetExternalSecuritySolutionAsync("<resourceGroupName>", "<externalSecuritySolutionsName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetExternalSecuritySolution(string,string,RequestContext)">
+<example>
+This sample shows how to call GetExternalSecuritySolution with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new ExternalSecuritySolutionsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.GetExternalSecuritySolution("<resourceGroupName>", "<externalSecuritySolutionsName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetExternalSecuritySolutionsAsync(RequestContext)">
+<example>
+This sample shows how to call GetExternalSecuritySolutionsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new ExternalSecuritySolutionsClient("<subscriptionId>", "<ascLocation>", credential);
+
+await foreach (var item in client.GetExternalSecuritySolutionsAsync(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetExternalSecuritySolutions(RequestContext)">
+<example>
+This sample shows how to call GetExternalSecuritySolutions with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new ExternalSecuritySolutionsClient("<subscriptionId>", "<ascLocation>", credential);
+
+foreach (var item in client.GetExternalSecuritySolutions(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetExternalSecuritySolutionsByHomeRegionAsync(RequestContext)">
+<example>
+This sample shows how to call GetExternalSecuritySolutionsByHomeRegionAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new ExternalSecuritySolutionsClient("<subscriptionId>", "<ascLocation>", credential);
+
+await foreach (var item in client.GetExternalSecuritySolutionsByHomeRegionAsync(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetExternalSecuritySolutionsByHomeRegion(RequestContext)">
+<example>
+This sample shows how to call GetExternalSecuritySolutionsByHomeRegion with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new ExternalSecuritySolutionsClient("<subscriptionId>", "<ascLocation>", credential);
+
+foreach (var item in client.GetExternalSecuritySolutionsByHomeRegion(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,70 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "externalSecuritySolution types"
+  },
+  "paths": {},
+  "definitions": {
+    "ExternalSecuritySolutionKind": {
+      "type": "object",
+      "description": "Describes an Azure resource with kind",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "description": "The kind of the external solution",
+          "enum": [
+            "CEF",
+            "ATA",
+            "AAD"
+          ],
+          "x-ms-enum": {
+            "name": "ExternalSecuritySolutionKind",
+            "modelAsString": true,
+            "values": [
+              {
+                "value": "CEF"
+              },
+              {
+                "value": "ATA"
+              },
+              {
+                "value": "AAD"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "AadConnectivityState": {
+      "type": "object",
+      "description": "Describes an Azure resource with kind",
+      "properties": {
+        "connectivityState": {
+          "type": "string",
+          "title": "The connectivity state of the external AAD solution ",
+          "enum": [
+            "Discovered",
+            "NotLicensed",
+            "Connected"
+          ],
+          "x-ms-enum": {
+            "name": "AadConnectivityState",
+            "modelAsString": true,
+            "values": [
+              {
+                "value": "Discovered"
+              },
+              {
+                "value": "NotLicensed"
+              },
+              {
+                "value": "Connected"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

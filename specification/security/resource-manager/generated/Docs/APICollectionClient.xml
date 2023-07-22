@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetAPICollectionAsync(string,string,string,RequestContext)">
+<example>
+This sample shows how to call GetAPICollectionAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new APICollectionClient("<subscriptionId>", credential);
+
+Response response = await client.GetAPICollectionAsync("<resourceGroupName>", "<serviceName>", "<apiCollectionId>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("<test>").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetAPICollection(string,string,string,RequestContext)">
+<example>
+This sample shows how to call GetAPICollection with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new APICollectionClient("<subscriptionId>", credential);
+
+Response response = client.GetAPICollection("<resourceGroupName>", "<serviceName>", "<apiCollectionId>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("<test>").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetAPICollectionsAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call GetAPICollectionsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new APICollectionClient("<subscriptionId>", credential);
+
+await foreach (var item in client.GetAPICollectionsAsync("<resourceGroupName>", "<serviceName>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("<test>").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetAPICollections(string,string,RequestContext)">
+<example>
+This sample shows how to call GetAPICollections with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new APICollectionClient("<subscriptionId>", credential);
+
+foreach (var item in client.GetAPICollections("<resourceGroupName>", "<serviceName>", new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("displayName").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("additionalData").GetProperty("<test>").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>

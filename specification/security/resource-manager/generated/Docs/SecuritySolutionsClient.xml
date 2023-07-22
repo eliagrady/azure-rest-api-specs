@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetSecuritySolutionAsync(string,string,RequestContext)">
+<example>
+This sample shows how to call GetSecuritySolutionAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecuritySolutionsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = await client.GetSecuritySolutionAsync("<resourceGroupName>", "<securitySolutionName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("securityFamily").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("provisioningState").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("template").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("protectionStatus").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetSecuritySolution(string,string,RequestContext)">
+<example>
+This sample shows how to call GetSecuritySolution with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecuritySolutionsClient("<subscriptionId>", "<ascLocation>", credential);
+
+Response response = client.GetSecuritySolution("<resourceGroupName>", "<securitySolutionName>", new RequestContext());
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("properties").GetProperty("securityFamily").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("provisioningState").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("template").ToString());
+Console.WriteLine(result.GetProperty("properties").GetProperty("protectionStatus").ToString());
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+]]></code>
+</example>
+    </member>
+    <member name="GetSecuritySolutionsAsync(RequestContext)">
+<example>
+This sample shows how to call GetSecuritySolutionsAsync with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecuritySolutionsClient("<subscriptionId>", "<ascLocation>", credential);
+
+await foreach (var item in client.GetSecuritySolutionsAsync(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("securityFamily").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("provisioningState").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("template").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("protectionStatus").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+    <member name="GetSecuritySolutions(RequestContext)">
+<example>
+This sample shows how to call GetSecuritySolutions with required parameters and parse the result.
+<code><![CDATA[
+var credential = new DefaultAzureCredential();
+var client = new SecuritySolutionsClient("<subscriptionId>", "<ascLocation>", credential);
+
+foreach (var item in client.GetSecuritySolutions(new RequestContext()))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("properties").GetProperty("securityFamily").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("provisioningState").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("template").ToString());
+    Console.WriteLine(result.GetProperty("properties").GetProperty("protectionStatus").ToString());
+    Console.WriteLine(result.GetProperty("id").ToString());
+    Console.WriteLine(result.GetProperty("name").ToString());
+    Console.WriteLine(result.GetProperty("type").ToString());
+}
+]]></code>
+</example>
+    </member>
+  </members>
+</doc>
